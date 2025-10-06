@@ -1,0 +1,115 @@
+// -----------------------------------------------------------------------------
+// This file contains sass function configuration
+// -----------------------------------------------------------------------------
+
+// This function used to get color from $standard variables
+// Example use : standard(default, primary);
+@function standard($color, $tone) {
+	@if map-has-key($standard, $color) {
+		$color: map-get($standard, $color);
+		@if map-has-key($color, $tone) {
+			$tone: map-get($color, $tone);
+			@return $tone;
+		}
+		@warn "unknown tone `#{$tone}` in color";
+		@return null;
+	}
+	@warn "unknown color `#{$color}` in palette";
+	@return null;
+}
+
+// This function used to get color from $custom-palettes variables
+// Example use : set_color(white, base);
+@function set_color($color, $tone) {
+	@if map-has-key($custom-palettes, $color) {
+		$color: map-get($custom-palettes, $color);
+		@if map-has-key($color, $tone) {
+			$tone: map-get($color, $tone);
+			@return $tone;
+		}
+		@warn "unknown tone `#{$tone}` in color";
+		@return null;
+	}
+	@warn "unknown color `#{$color}` in palette";
+	@return null;
+}
+
+// This function used to get color from $material variables
+// Example use : material(white, 600);
+@function material($color, $tone) {
+	@if map-has-key($material, $color) {
+		$color: map-get($material, $color);
+		@if map-has-key($color, $tone) {
+			$tone: map-get($color, $tone);
+			@return $tone;
+		}
+		@warn "unknown tone `#{$tone}` in color";
+		@return null;
+	}
+	@warn "unknown color `#{$color}` in material color";
+	@return null;
+}
+
+// This function used to get color from $material_shadow variables
+// Example use : material_shadow(white, 50);
+@function material_shadow($color, $size, $depth) {
+	@if map-has-key($material-shadow, $color) {
+		$color: map-get($material-shadow, $color);
+
+		@if map-has-key($color, $size) {
+			$size: map-get($color, $size);
+
+			@if map-has-key($size, $depth) {
+				$depth: map-get($size, $depth);
+				@return $depth;
+			}
+
+			@warn "unknown depth `#{$depth}` in color";
+			@return null;
+		}
+
+		@warn "unknown size `#{$size}` in color";
+		@return null;
+	}
+
+	@warn "unknown color `#{$color}` in material shadow color";
+	@return null;
+}
+
+// Calculate font size into rem unit
+// Example use : calculateRem(14px);
+@function calculateRem($size) {
+	$remSize: calc($size / 16px);
+	@return $remSize * 1rem;
+}
+
+// Set font size from $font-size variables
+// Example use : set(base, sm);
+@function set($group, $size) {
+	@if map-has-key($font-size, $group) {
+		$group: map-get($font-size, $group);
+		@if map-has-key($group, $size) {
+			$size: map-get($group, $size);
+			@return $size;
+		}
+		@warn "unknown size `#{$size}` in group";
+		@return null;
+	}
+	@warn "unknown group `#{$group}` in palette";
+	@return null;
+}
+
+// This function is similar to explode & implode your string
+// Example use : str-replace("Test Text", " ", "_");
+@function str-replace($string, $search, $replace: '') {
+	$index: str-index($string, $search);
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace +
+			str-replace(
+				str-slice($string, $index + str-length($search)),
+				$search,
+				$replace
+			);
+	}
+	@return $string;
+}

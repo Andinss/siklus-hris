@@ -1,0 +1,20 @@
+@use './abstracts/mixins' as mixins;
+@use './abstracts/functions' as functions;
+@use './base/fonts' as fonts;
+
+.preloader {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1001;
+	background: functions.std_val(std_color, alpha_light_92);
+
+	.circular {
+		height: 140px;
+		width: 140px;
+		object-fit: contain;
+	}
+}

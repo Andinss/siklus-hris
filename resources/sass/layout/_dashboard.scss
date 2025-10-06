@@ -1,0 +1,37 @@
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+:root {
+	--sidebar-open-width: 280px;
+}
+
+.page-content {
+	.content {
+		display: flex;
+		flex-direction: row;
+
+		.sidebar {
+			width: 0;
+			overflow-x: hidden;
+			transition: width 300ms ease-out;
+		}
+
+		#page-wrapper {
+			width: 100%;
+			padding: 24px 24px;
+			min-height: 100vh;
+			background: functions.std_val(std_color, light_100);
+			transition: width 300ms ease-out;
+		}
+
+		&.sidebar-open {
+			.sidebar {
+				width: var(--sidebar-open-width);
+			}
+			#page-wrapper {
+				width: calc(100% - var(--sidebar-open-width));
+			}
+		}
+	}
+}

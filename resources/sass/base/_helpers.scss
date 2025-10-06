@@ -1,0 +1,129 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use './fonts' as fonts;
+
+// Prevent image drag
+img {
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+// Prevent textarea to resizeable
+.resize-none {
+	resize: none;
+}
+
+// Setup image width 100% following container width
+.container-image {
+	overflow: hidden;
+	> a {
+		> img {
+			width: 100%;
+		}
+	}
+	> img {
+		width: 100%;
+	}
+}
+
+// Configuration of styling of nested list
+.nested-list {
+	display: flex;
+	flex-direction: column;
+	counter-reset: item;
+	li {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		&::before {
+			content: counters(item, '.') ' ';
+			counter-increment: item;
+			width: 3%;
+		}
+		> span {
+			width: 97%;
+		}
+	}
+	.nested-list {
+		width: 100%;
+		display: block;
+	}
+}
+
+.h-100 {
+	height: 100%;
+}
+
+.code {
+	background: functions.std_val(material_color, orange_50);
+	color: functions.std_val(material_color, orange_500);
+	padding: 4px 8px;
+	letter-spacing: 0.25px !important;
+	font-family: monospace !important;
+}
+
+.mx-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.my-auto {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.z-0 {
+	z-index: 0;
+}
+.z-1 {
+	z-index: 1;
+}
+
+.hide-scrollbar {
+	overflow: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.img-on-hover {
+	position: relative;
+	display: flex;
+	border-radius: 8px;
+	overflow: hidden;
+	border: 1px solid functions.std_val(std_color, divider);
+	margin-bottom: 0.5rem;
+	&::before {
+		content: 'Click to view';
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: functions.std_val(std_color, alpha_dark_48);
+		color: functions.std_val(std_color, light_25);
+		top: 0;
+		left: 0;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		opacity: 0;
+		transition: 300ms ease-out;
+	}
+	&:hover {
+		&::before {
+			opacity: 1;
+		}
+	}
+	+ i > small {
+		line-height: 0.5;
+	}
+}

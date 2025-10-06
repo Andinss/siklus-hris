@@ -1,0 +1,252 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,300,600,700);
+/*Theme Colors*/
+/*bootstrap Color*/
+/*Normal Color*/
+/*Border radius*/
+/*Preloader*/
+.preloader {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  position: fixed;
+  z-index: 99999;
+  background: #fff;
+}
+.preloader .cssload-speeding-wheel {
+  position: absolute;
+  top: calc(50% - 3.5px);
+  left: calc(50% - 3.5px);
+}
+/* This is for popins font for firefox */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/poppins/v1/2fCJtbhSlhNNa6S2xlh9GyEAvth_LlrfE80CYdSH47w.woff2) format('woff2');
+  unicode-range: U+02BC, U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200B-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* This is for popins font for firefox */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/poppins/v1/UGh2YG8gx86rRGiAZYIbVyEAvth_LlrfE80CYdSH47w.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* This is for popins font for firefox */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/poppins/v1/yQWaOD4iNU5NTY0apN-qj_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/*Just change your choise color here its theme Colors*/
+body {
+  background: #fff;
+}
+/*Top Header Part*/
+.top-left-part {
+  background: rgba(0, 0, 0, 0.2);
+}
+.logo i {
+  color: #ffffff;
+}
+.navbar-header {
+  background: #0D47A1;
+}
+.navbar-top-links > li > a {
+  color: #ffffff;
+}
+/*Right panel*/
+.right-sidebar .rpanel-title {
+  background: #0D47A1;
+}
+/*Bread Crumb*/
+.bg-title .breadcrumb .active {
+  color: #0D47A1;
+}
+/*Sidebar*/
+.sidebar {
+  background: #fff;
+  box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+}
+.sidebar .label-custom {
+  background: #0D47A1;
+}
+#side-menu li a {
+  color: #54667a;
+}
+#side-menu li a {
+  color: #54667a;
+}
+#side-menu > li > a:hover,
+#side-menu > li > a:focus {
+  background: rgba(0, 0, 0, 0.03);
+}
+#side-menu > li > a.active {
+  border-left: 3px solid #0D47A1;
+  color: #2b2b2b;
+  font-weight: 500;
+}
+#side-menu > li > a.active i {
+  color: #0D47A1;
+}
+#side-menu ul > li > a:hover {
+  color: #0D47A1;
+}
+#side-menu ul > li > a.active {
+  color: #2b2b2b;
+  font-weight: 500;
+}
+.sidebar #side-menu .user-pro .nav-second-level a:hover {
+  color: #0D47A1;
+}
+.fix-sidebar .top-left-part {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+}
+/*themecolor*/
+.bg-theme {
+  background-color: #0D47A1 !important;
+}
+.bg-theme-dark {
+  background-color: #0D47A1 !important;
+}
+
+/* Background Color */
+.bg-primary-10 {
+  background-color: #e7f1ff !important;
+}
+.bg-brown-10 {
+  background-color: #ffe8e1 !important;
+}
+.bg-info-10 {
+  background-color: #ddf4ff !important;
+}
+.bg-purple-10 {
+  background-color: #ece1ff !important;
+}
+.bg-warning-10 {
+  background-color: #fff8e3 !important;
+}
+.bg-danger-10 {
+  background-color: #ffdcd1 !important;
+}
+.bg-danger {
+  background-color: #ff214d !important;
+}
+
+/* Typography */
+.text-primary {
+  color: #0D47A1 !important;
+}
+.text-danger {
+  color: #ff214d !important;
+}
+.label-brown {
+  background-color: #ba5f46;
+  color: #ffffff;
+}
+.label-danger {
+  background-color: #ff214d;
+}
+
+/*Chat widget*/
+.chat-list .odd .chat-text {
+  background: #0D47A1;
+}
+/*Button*/
+.btn-custom {
+  background: #0D47A1;
+  border: 1px solid #0D47A1;
+  color: #ffffff;
+}
+.btn-custom:hover {
+  background: #0D47A1;
+  opacity: 0.8;
+  color: #ffffff;
+  border: 1px solid #0D47A1;
+}
+/*Custom tab*/
+.customtab li.active a,
+.customtab li.active a:hover,
+.customtab li.active a:focus {
+  border-bottom: 2px solid #0D47A1;
+  color: #0D47A1;
+}
+.tabs-vertical li.active a,
+.tabs-vertical li.active a:hover,
+.tabs-vertical li.active a:focus {
+  background: #0D47A1;
+  border-right: 2px solid #0D47A1;
+}
+/*Nav-pills*/
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+  background: #0D47A1;
+  color: #ffffff;
+}
+
+/* Border */
+.border {
+  border: 1px solid #f5f5f5;
+}
+.border-dark {
+  border: 1px solid #263238;
+}
+.border-bottom {
+  border-bottom-width: 1px !important;
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+td.border-bottom {
+  border-top: 1px solid #e4e7ea !important;
+}
+
+/* Button */
+.btn-primary {
+  background-color: #0D47A1;
+}
+.btn-primary.disabled.focus, .btn-primary.disabled:focus, .btn-primary.disabled:hover, .btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
+  background: #0D47A1;
+  opacity: .8;
+  border: 1px solid #0D47A1;
+}
+.btn-secondary {
+  background-color: #75D7F0;
+  color: #2b2b2b;
+}
+.btn-secondary.disabled.focus, .btn-secondary.disabled:focus, .btn-secondary.disabled:hover, .btn-secondary.focus, .btn-secondary:focus, .btn-secondary:hover {
+  background: #75D7F0;
+  opacity: .8;
+  border: 1px solid #75D7F0;
+}
+
+/* Checkbox */
+.checkbox-primary input[type=checkbox]:checked+label::before {
+  background-color: #75D7F0;
+  border-color: #75D7F0;
+}
+
+/* Form */
+.form-control.input--success {
+  background-color: rgba(0, 194, 146, 0.1);
+}
+
+.form-control.input--danger {
+  background-color: rgba(233, 30, 99, 0.1);
+}
+
+/* Table */
+.thead-light {
+  background-color: #f3f8fc;
+}
+.thead-light th {
+  border-color: #f3f8fc !important;
+}

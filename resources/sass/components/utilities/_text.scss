@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------------------
+// This file contains text component rules
+// -----------------------------------------------------------------------------
+
+@use '../../abstracts/mixins' as mixins;
+@use '../../abstracts/functions' as functions;
+@use '../../base/fonts' as fonts;
+
+.fs {
+	&-7 {
+		font-size: 0.75rem;
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"watch": "vite build --watch",
+		"format:blade": "blade-formatter \"resources/views/**/*.blade.php\" --write",
+		"format:prettier": "prettier --write \"resources/**/*.{js,css,scss,json,md}\"",
+		"format": "npm run format:prettier && npm run format:blade"
+	},
+	"devDependencies": {
+		"@melonthierry/compass-mixins": "^0.12.11",
+		"axios": "^1.6.4",
+		"laravel-mix": "^6.0.6",
+		"laravel-vite-plugin": "^1.0.0",
+		"postcss": "^8.3.1",
+		"resolve-url-loader": "^5.0.0",
+		"sass": "^1.93.2",
+		"sass-loader": "^10.1.0",
+		"vite": "^5.0.0"
+	},
+	"dependencies": {
+		"autoprefixer": "10.4.5",
+		"blade-formatter": "^1.42.0",
+		"jquery": "^3.7.1",
+		"normalize": "^0.3.1",
+		"prettier": "^3.0.0"
+	}
+}

@@ -1,0 +1,18 @@
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.datepicker table tr td.today,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today:hover {
+	background: #ff6849;
+	color: #fff;
+}
+.datepicker table tr td.active,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active:hover {
+	background: #03a9f3;
+	color: #fff;
+}

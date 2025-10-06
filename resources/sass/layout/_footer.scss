@@ -1,0 +1,14 @@
+// -----------------------------------------------------------------------------
+// This file contains footer ui layout rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.footer {
+	@include fonts.use_font(body_regular_sm);
+	color: functions.std_val(std_color, neutral_light);
+	border-top: 1px solid functions.std_val(std_color, divider);
+	padding: 12px 16px;
+}

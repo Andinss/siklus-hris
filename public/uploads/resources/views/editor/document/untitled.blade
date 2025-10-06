@@ -1,0 +1,144 @@
+ 
+@extends('layouts.editor.template')
+@section('title', 'Company Document')   
+@section('content')
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    <i class="fa fa-book"></i>
+    Company Document
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="{{url('/')}}/editor"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Personal</a></li>
+    <li class="active">Company Document</li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <!-- <div class="col-xs-2">
+    </div> -->
+    <div class="col-xs-8">
+      <div class="box box-danger">
+        @include('errors.error')
+        @if(isset($document))
+        {!! Form::model($document, array('route' => ['editor.document.update', $document->id], 'method' => 'PUT', 'class'=>'update', 'files' => 'true', 'id'=>'form_document'))!!}
+        @else
+        {!! Form::open(array('route' => 'editor.document.store', 'class'=>'create', 'files' => 'true', 'id'=>'form_document'))!!}
+        @endif
+        {{ csrf_field() }}
+        <div class="box-header with-border">
+          <section class="content-header>
+            <h4>
+              @if(isset($module))
+              <i class="fa fa-pencil"></i> Edit
+              @else
+              <i class="fa fa-plus"></i> 
+              @endif
+              Document
+            </h4>
+          </section>
+        </div>
+        <div class="box-header with-border">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                {{ Form::label('documentno', 'Document No') }}
+                {{ Form::text('documentno', old('documentno'), array('class' => 'form-control', 'placeholder' => 'Document No*', 'required' => 'true', 'id' => 'documentno')) }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                {{ Form::label('documentname', 'Document Name') }}
+                {{ Form::text('documentname', old('documentname'), array('class' => 'form-control', 'placeholder' => 'Document Name*', 'required' => 'true', 'id' => 'documentname')) }} 
+              </div>
+            </div>   
+            <div class="col-md-6">
+              <div class="form-group">
+                {{ Form::label('documentdate', 'Document Date') }}
+                {{ Form::text('documentdate', old('documentdate'), array('class' => 'form-control', 'placeholder' => 'Document Date*', 'required' => 'true', 'id' => 'documentdate')) }} 
+              </div>
+            </div>   
+            <div class="col-md-6">
+              <div class="form-group">
+                {{ Form::label('expireddate', 'Expired Date') }}
+                {{ Form::text('expireddate', old('expireddate'), array('class' => 'form-control', 'placeholder' => 'Expired Date*', 'required' => 'true', 'id' => 'expireddate')) }} 
+              </div>
+            </div>   
+            <div class="col-md-6">
+              <div class="form-group">
+                {{ Form::label('dayprocess', 'Day Process') }}
+                {{ Form::text('dayprocess', old('dayprocess'), array('class' => 'form-control', 'placeholder' => 'Day Process*', 'required' => 'true', 'id' => 'dayprocess')) }} 
+              </div>
+            </div>   
+            <div class="col-md-6" style="display: none">
+              <div class="form-group">
+                {{ Form::label('indate', 'In Date') }}
+                {{ Form::text('indate', old('indate'), array('class' => 'form-control', 'placeholder' => 'In Date*', 'required' => 'true', 'id' => 'indate')) }} 
+              </div>
+            </div>  
+
+            <div class="col-md-6" style="display: none">
+              <div class="form-group">
+                {{ Form::label('year', 'Year') }}
+                {{ Form::text('year', old('year'), array('class' => 'form-control', 'placeholder' => 'Year*', 'required' => 'true', 'id' => 'year')) }} 
+              </div>
+            </div>     
+            <div class="col-md-6">
+              <div class="form-group">
+                {{ Form::label('amount', 'Amount') }}
+                {{ Form::text('amount', old('amount'), array('class' => 'form-control', 'placeholder' => 'Amount*', 'required' => 'true', 'id' => 'amount')) }} 
+              </div>
+            </div>    
+
+            <div class="col-md-6">
+              <div class="form-group">
+                {{ Form::label('documenttypeid', 'Document Type') }}
+                {{ Form::select('documenttypeid', $documenttype_list, old('documenttypeid'), array('class' => 'form-control', 'placeholder' => 'Select Document Type', 'id' => 'documenttypeid')) }} 
+                  
+              </div>
+            </div>  
+
+            <div class="col-md-6">
+              <div class="form-group">
+                {{ Form::label('attachment', 'Attachment (.pdf)') }}<br>
+                <span><span>Choose file</span><input type="file" name="attachment" /></span>
+                <br/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box-header with-border">
+          <div class="col-md-12">
+            <div class="form-group">
+              <button type="submit" class="btn btn-success btn-flat pull-right"><i class="fa fa-check"></i> Save</button>
+              <a href="{{ URL::route('editor.document.index') }}" class="btn btn-default btn-flat pull-right" style="margin-right: 10px"><i class="fa fa-close"></i> Close</a>
+            </div>
+          </div>
+        </div>
+      </section><!-- /.content -->
+      {!! Form::close() !!}
+    </div>
+  </div>
+</section>
+@stop
+
+<script type="text/javascript"> 
+  $(document).ready(function(){
+    $('#documentdate').datepicker({
+      sideBySide: true,
+      format: 'yyyy-mm-dd',
+    });
+    $('#expireddate').datepicker({
+      sideBySide: true,
+      format: 'yyyy-mm-dd',
+    });
+    $('#datetrans').datepicker({
+      sideBySide: true,
+      format: 'yyyy-mm-dd',
+    }); 
+  });
+</script>

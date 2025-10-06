@@ -1,0 +1,84 @@
+/* Modal */
+@media (min-width: 992px) {
+	.modal-lg {
+		max-width: 960px;
+	}
+}
+@media (min-width: 1024px) {
+	.modal-lg {
+		max-width: 1024px;
+	}
+}
+.modal.fade .modal-dialog {
+	-webkit-transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+
+/* Form */
+.label-sm {
+	font-size: 12px !important;
+}
+.custom-select-sm {
+	height: calc(3rem);
+}
+/* Button */
+.btn.btn-icon-txt-middle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Logo */
+.logo img {
+	height: 24px;
+}
+
+@media only screen and (max-width: 1024px) {
+	.logo img {
+		width: 50px;
+		height: 15px;
+	}
+}
+
+/* Image */
+.img-employee-sm {
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	object-position: center;
+}
+.img-employee-md {
+	width: 64px;
+	height: 64px;
+	object-fit: cover;
+	object-position: center;
+}
+
+/* List */
+.list-scrollable {
+	width: 100%;
+	max-height: 250px;
+	overflow-y: scroll;
+}
+
+/* Typography */
+.font-weight-semibold {
+	font-weight: 500;
+}
+
+/* Table */
+.table thead th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #dee2e6;
+}
+.table-sm > thead > tr > th,
+.table-sm > tbody > tr > td,
+.table-sm td,
+.table-sm th {
+	padding: 0.3rem;
+}
+
+.mb-4 {
+	margin-bottom: 1.5rem;
+}

@@ -1,0 +1,239 @@
+// -----------------------------------------------------------------------------
+// This file contains forms ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+// Form Control
+.form-control {
+	background-color: functions.std_val(std_color, light_25);
+	box-shadow: none;
+	color: functions.std_val(std_color, dark_100);
+	height: 38px;
+	max-width: 100%;
+	padding: 7px 12px;
+	transition: all 300ms linear 0s;
+	border: 1px solid functions.std_val(material_color, blue_grey_700);
+}
+.form-control:focus {
+	box-shadow: none;
+	border-color: functions.std_val(std_color, dark_25);
+}
+
+.form-control-line {
+	border-left: 0 none;
+	border-radius: 0;
+	border-right: 0 none;
+	border-top: 0 none;
+	box-shadow: none;
+	padding-left: 0;
+}
+.has-success .form-control {
+	border-color: #00c292;
+	box-shadow: none !important;
+}
+.has-warning .form-control {
+	border-color: #fec107;
+	box-shadow: none !important;
+}
+.has-error .form-control {
+	border-color: #fb9678;
+	box-shadow: none !important;
+}
+.input-group-addon {
+	border-radius: 2px;
+	border: 1px solid rgba(120, 130, 140, 0.13);
+}
+.input-daterange input:first-child,
+.input-daterange input:last-child {
+	border-radius: 2px;
+}
+.form-material .form-group {
+	overflow: hidden;
+	> label {
+		display: block;
+		margin-bottom: 4px;
+		color: functions.std_val(std_color, neutral_main);
+	}
+}
+.form-material .form-control {
+	min-height: 40px;
+	background-color: rgba(0, 0, 0, 0.06);
+	background-position:
+		center bottom,
+		center calc(99%);
+	background-repeat: no-repeat;
+	background-size:
+		0 2px,
+		100% 1px;
+	padding: 4px 12px;
+	transition: background 0s ease-out 0s;
+}
+.form-material .form-control,
+.form-material .form-control.focus,
+.form-material .form-control:focus {
+	background-image: linear-gradient(#637381, #637381), linear-gradient(rgba(120, 130, 140, 0.13), rgba(120, 130, 140, 0.13));
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+	float: none;
+}
+.form-material .form-control.focus,
+.form-material .form-control:focus {
+	background-size:
+		100% 2px,
+		100% 1px;
+	outline: 0;
+	transition-duration: 0.3s;
+}
+.form-bordered .form-group {
+	border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+	padding-bottom: 20px;
+}
+
+.input-sm {
+	height: 30px;
+	padding: 5px 10px;
+	font-size: 12px;
+	line-height: 1.5;
+}
+.input-lg {
+	height: 44px;
+	padding: 5px 10px;
+	font-size: 18px;
+}
+.bootstrap-tagsinput {
+	border: 1px solid #e4e7ea;
+	border-radius: 2px;
+	box-shadow: none;
+	display: block;
+	padding: 7px 12px;
+}
+.bootstrap-touchspin .input-group-btn-vertical > .btn {
+	padding: 9px 10px;
+}
+.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down,
+.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up {
+	border-radius: 2px;
+}
+.input-group-btn .btn {
+	padding: 8px 12px;
+}
+.form-horizontal .form-group {
+	margin-left: -7.5px;
+	margin-right: -7.5px;
+	margin-bottom: 25px;
+}
+.form-group {
+	margin-bottom: 16px;
+}
+.app-search {
+	position: relative;
+	margin: 0;
+}
+.app-search a {
+	position: absolute;
+	top: 20px;
+	right: 10px;
+	color: #4c5667;
+}
+.app-search .form-control,
+.app-search .form-control:focus {
+	border: none;
+	font-size: 13px;
+	color: #4c5667;
+	padding-left: 20px;
+	padding-right: 40px;
+	background: rgba(255, 255, 255, 0.9);
+	box-shadow: none;
+	height: 30px;
+	font-weight: 600;
+	width: 180px;
+	display: inline-block;
+	line-height: 30px;
+	margin-top: 15px;
+	border-radius: 40px;
+	transition: 0.5s ease-out;
+}
+.app-search .form-control::-moz-placeholder {
+	color: #4c5667;
+	opacity: 0.5;
+}
+.app-search .form-control::-webkit-input-placeholder {
+	color: #4c5667;
+	opacity: 0.5;
+}
+.app-search .form-control::-ms-placeholder {
+	color: #4c5667;
+	opacity: 0.5;
+}
+// Checkbox & Radio
+
+.custom-select {
+	height: calc(4.25rem);
+}
+.fileinput .form-control {
+	width: 100%;
+	position: relative;
+}
+.fileinput-new .input-group-addon {
+	position: absolute;
+	right: 3px;
+	top: 3px;
+	z-index: 10 !important;
+}
+.input-group-addon {
+	padding: 6px 12px;
+	font-size: 14px;
+}
+.custom-control {
+	padding-left: 20px;
+}
+.custom-control-indicator {
+	width: 15px;
+	height: 15px;
+}
+.custom-file {
+	height: 30px;
+	width: 100%;
+}
+.custom-file .custom-file-control,
+.custom-file .custom-file-control::before {
+	height: 35px;
+}
+select.form-control:not([size]):not([multiple]) {
+	height: calc(3.85rem);
+}
+
+.custom-toggle-password {
+	position: relative;
+	.btn-toggle-password {
+		position: absolute;
+		right: 8px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	> .form-control,
+	input {
+		padding-right: 48px;
+	}
+}
+
+.btn-toggle-password {
+	> .iconify {
+		display: none;
+		color: functions.std_val(std_color, dark_25);
+	}
+	&[aria-hidden='true'] {
+		> .iconify:last-child {
+			display: flex;
+		}
+	}
+	&[aria-hidden='false'] {
+		> .iconify:first-child {
+			display: flex;
+		}
+	}
+}

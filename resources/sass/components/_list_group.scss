@@ -1,0 +1,132 @@
+// -----------------------------------------------------------------------------
+// This file contains list group ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+ul.common li {
+	display: inline-block;
+	line-height: 40px;
+	list-style: none none;
+	width: 48%;
+	a {
+		color: #686868;
+		&:hover {
+			color: #03a9f3;
+		}
+	}
+}
+.list-inline > li {
+	display: inline-block;
+}
+// .list-group-item,
+// .list-group-item:first-child,
+// .list-group-item:last-child {
+// 	border-radius: 2px;
+// 	border-color: rgba(120, 130, 140, 0.13);
+// }
+// .list-group-item.active,
+// .list-group-item.active:focus,
+// .list-group-item.active:hover {
+// 	background: #03a9f3;
+// 	border-color: #03a9f3;
+// }
+.list-task .list-group-item,
+.list-task .list-group-item:first-child {
+	border-radius: 2px;
+	border: 0;
+}
+.list-task .list-group-item:last-child {
+	border-radius: 0;
+	border: 0;
+}
+.list-task .task-done span {
+	text-decoration: line-through;
+}
+
+.list-group {
+	.list-group-item {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		padding: 8px 12px;
+		gap: 16px;
+		> p {
+			width: 100%;
+			text-wrap: wrap;
+			padding: 2px 0;
+		}
+		> .action {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 4px;
+			margin-left: auto;
+			height: 28px;
+			padding: 4px 12px 4px 8px;
+			border-radius: 4px;
+		}
+	}
+}
+
+.user-presence-list {
+	display: block;
+	width: 100%;
+	> li {
+		&:last-child {
+			> a {
+				border-bottom: 0;
+			}
+		}
+		> a {
+			display: block;
+			padding: 16px 16px;
+			border-bottom: 1px solid functions.std_val(std_color, divider);
+		}
+		.user-item {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 16px;
+			> .avatar {
+				min-height: 55px;
+				min-width: 55px;
+				height: 55px;
+				width: 55px;
+				border-radius: 50%;
+				overflow: hidden;
+				border: 1px solid functions.std_val(std_color, divider);
+				> img {
+					height: 100%;
+					width: auto;
+					object-fit: contain;
+				}
+			}
+			> .user-info {
+				width: 100%;
+				> .name {
+					color: functions.std_val(std_color, dark_75);
+					@include fonts.use_font(body_medium_md);
+					margin-bottom: 2px;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					white-space: nowrap;
+				}
+			}
+			> .gimmick-btn {
+				@include fonts.use_font(body_regular_md);
+				white-space: nowrap;
+				opacity: 0;
+				transition: opacity 200ms ease;
+			}
+			&:hover {
+				> .gimmick-btn {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

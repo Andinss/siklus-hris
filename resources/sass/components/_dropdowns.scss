@@ -1,0 +1,191 @@
+// -----------------------------------------------------------------------------
+// This file contains dropdown ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.dropdown-menu {
+	border: 1px solid rgba(120, 130, 140, 0.13);
+	border-radius: 2px;
+	padding-bottom: 8px;
+	margin-top: 0;
+}
+.dropdown-menu > li > a {
+	padding: 9px 20px;
+}
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:hover {
+	background: #f7fafc;
+}
+.navbar-top-links .progress {
+	margin-bottom: 6px;
+}
+.dropdown-alerts,
+.dropdown-tasks {
+	padding: 0;
+}
+.dropdown-alerts li a,
+.dropdown-tasks li a,
+.mailbox li > a {
+	padding: 15px 20px;
+}
+.dropdown-alerts li.divider,
+.dropdown-tasks li.divider {
+	margin: 0;
+}
+// Mega Dropdown
+.megamenu {
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+.mega-dropdown {
+	position: static !important;
+}
+.mega-dropdown-menu {
+	padding: 20px;
+	width: 100%;
+	-webkit-box-shadow: none;
+	border: 0;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+.mega-dropdown-menu > li > ul {
+	padding: 0;
+	margin: 0;
+}
+.mega-dropdown-menu > li > ul > li {
+	list-style: none;
+}
+.mega-dropdown-menu > li > ul > li > a {
+	display: block;
+	padding: 8px 0;
+	clear: both;
+	line-height: 1.428571429;
+	color: #686868;
+	white-space: normal;
+}
+.mega-dropdown-menu > li > ul > li > a:focus,
+.mega-dropdown-menu > li > ul > li > a:hover {
+	text-decoration: none;
+	color: #ff6849;
+}
+.mega-dropdown-menu .dropdown-header {
+	font-size: 16px;
+	font-weight: 500;
+	padding: 8px 0;
+	margin-top: 12px;
+}
+.mega-dropdown-menu li.demo-box a {
+	color: #fff;
+	display: block;
+}
+.mega-dropdown-menu li.demo-box a:hover {
+	opacity: 0.8;
+}
+// Lobi Dropdown
+.lobipanel .panel-heading .dropdown .dropdown-menu > li > a .panel-control-icon,
+.lobipanel > .panel-heading .dropdown .dropdown-toggle .panel-control-icon {
+	line-height: 1px;
+}
+.lobipanel .panel-heading .dropdown .dropdown-menu > li > a {
+	color: #2b2b2b;
+}
+.lobipanel .panel-heading .dropdown .dropdown-menu {
+	box-shadow: none !important;
+}
+.lobipanel .panel-heading .dropdown .dropdown-menu > li > a:focus:hover,
+.lobipanel .panel-heading .dropdown .dropdown-menu > li > a:hover {
+	background: 0 0;
+	text-shadow: none;
+	opacity: 0.6;
+}
+.lobipanel-placeholder {
+	background-color: #02bec9;
+	opacity: 0.1;
+	border: 1px dashed #2b2b2b;
+}
+
+@include mixins.breakpoint_min(md) {
+	.dropdown .dropdown-tasks,
+	.dropdown .mailbox {
+		left: -100px;
+	}
+	.lobipanel .panel-heading .dropdown .dropdown-menu > li > a {
+		color: #fff;
+	}
+}
+
+.dropdown {
+	.dropdown-toggle {
+		@include fonts.use_font(body_regular_md);
+		&::after {
+			top: 1px;
+			position: relative;
+		}
+		&.remove-caret {
+			&::after {
+				display: none;
+			}
+		}
+	}
+	&.show {
+		.dropdown-toggle {
+			background-color: functions.std_val(std_color, light_75);
+			background: functions.std_val(std_color, light_75);
+			&:hover,
+			&:focus,
+			&:focus-visible,
+			&:active {
+				background-color: functions.std_val(std_color, light_75);
+				background: functions.std_val(std_color, light_75);
+				box-shadow: none;
+				border: 0;
+				outline: 0;
+			}
+		}
+	}
+	.dropdown-menu {
+		box-shadow: functions.std_val(elevation, dropdown);
+		min-width: 180px;
+		border-radius: 12px;
+		.dropdown-item {
+			padding: 8px 16px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 8px;
+			background: transparent;
+			@include fonts.use_font(body_regular_md);
+			color: functions.std_val(std_color, dark_25);
+			&:hover {
+				background: functions.std_val(std_color, light_75);
+				color: functions.std_val(std_color, dark_75);
+			}
+		}
+	}
+	&.dropdown-notification {
+		.dropdown-menu {
+			.no-content {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding: 24px 0;
+				> .illustration {
+					padding: 4px 16px;
+					height: 200px;
+					> img {
+						height: 100%;
+						width: auto;
+						object-fit: contain;
+					}
+				}
+				> p {
+					text-align: center;
+					color: functions.std_val(std_color, neutral_light);
+				}
+			}
+		}
+	}
+}

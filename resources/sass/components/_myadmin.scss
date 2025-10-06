@@ -1,0 +1,173 @@
+// -----------------------------------------------------------------------------
+// This file contains myadmin ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.myadmin-dd .dd-list .dd-item .dd-handle {
+	background: #fff;
+	border: 1px solid rgba(120, 130, 140, 0.13);
+	padding: 8px 16px;
+	height: auto;
+	font-weight: 600;
+	border-radius: 2px;
+}
+.myadmin-dd .dd-list .dd-item .dd-handle:hover {
+	color: #03a9f3;
+}
+.myadmin-dd .dd-list .dd-item button {
+	height: auto;
+	font-size: 17px;
+	margin: 8px auto;
+	color: #2b2b2b;
+	width: 30px;
+}
+.myadmin-dd-empty .dd-list .dd3-handle {
+	border: 1px solid rgba(120, 130, 140, 0.13);
+	border-bottom: 0;
+	background: #fff;
+	height: 36px;
+	width: 36px;
+}
+.myadmin-dd-empty .dd-list .dd3-handle:before {
+	color: inherit;
+	top: 7px;
+}
+.myadmin-dd-empty .dd-list .dd3-handle:hover {
+	color: #03a9f3;
+}
+.myadmin-dd-empty .dd-list .dd3-content {
+	height: auto;
+	border: 1px solid rgba(120, 130, 140, 0.13);
+	padding: 8px 16px 8px 46px;
+	background: #fff;
+	font-weight: 600;
+}
+.myadmin-dd-empty .dd-list .dd3-content:hover {
+	color: #03a9f3;
+}
+.myadmin-dd-empty .dd-list button {
+	width: 26px;
+	height: 26px;
+	font-size: 16px;
+	font-weight: 600;
+}
+.myadmin-alert {
+	border-radius: 0;
+	color: #fff;
+	padding: 12px 30px 12px 12px;
+	position: relative;
+	text-align: left;
+}
+.myadmin-alert a {
+	color: inherit;
+	font-weight: 600;
+	text-decoration: underline;
+}
+.myadmin-alert h4 {
+	color: inherit;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	margin: 0;
+}
+.myadmin-alert .img {
+	border-radius: 3px;
+	height: 40px;
+	left: 12px;
+	position: absolute;
+	top: 12px;
+	width: 40px;
+}
+.myadmin-alert-img {
+	min-height: 64px;
+	padding-left: 65px;
+}
+.myadmin-alert-icon {
+	padding-left: 20px;
+}
+.myadmin-alert-icon i {
+	padding-right: 10px;
+}
+.myadmin-alert .closed {
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 20px;
+	font-weight: 700;
+	padding: 4px;
+	position: absolute;
+	right: 3px;
+	text-decoration: none;
+	top: 0;
+}
+.myadmin-alert .closed:hover {
+	color: #fff;
+}
+.myadmin-alert-click {
+	cursor: pointer;
+	padding-right: 12px;
+}
+.myadmin-alert .primary {
+	background: rgba(0, 0, 0, 0.4);
+	border: none;
+	border-radius: 3px;
+	color: inherit;
+	outline: 0;
+	padding: 4px 10px;
+}
+.myadmin-alert .cancel {
+	background: rgba(255, 255, 255, 0.4);
+	border: none;
+	border-radius: 3px;
+	color: rgba(0, 0, 0, 0.8);
+	outline: 0;
+	padding: 4px 10px;
+}
+.myadmin-alert .cancel:hover,
+.myadmin-alert .primary:hover {
+	opacity: 0.9;
+}
+.myadmin-alert-bottom,
+.myadmin-alert-bottom-left,
+.myadmin-alert-bottom-right,
+.myadmin-alert-fullscreen,
+.myadmin-alert-top,
+.myadmin-alert-top-left,
+.myadmin-alert-top-right {
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+	display: none;
+	position: fixed;
+	z-index: 1000;
+}
+.myadmin-alert-top {
+	left: 0;
+	right: 0;
+	top: 0;
+}
+.myadmin-alert-bottom {
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.myadmin-alert-top-left {
+	left: 20px;
+	top: 80px;
+}
+.myadmin-alert-top-right {
+	right: 20px;
+	top: 80px;
+}
+.myadmin-alert-bottom-left {
+	bottom: 20px;
+	left: 20px;
+}
+.myadmin-alert-bottom-right {
+	bottom: 20px;
+	right: 20px;
+}
+.myadmin-alert-fullsize {
+	left: 50%;
+	margin: -20px;
+	top: 50%;
+}

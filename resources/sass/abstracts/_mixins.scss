@@ -1,0 +1,304 @@
+// -----------------------------------------------------------------------------
+// This file contains sass mixin configuration
+// -----------------------------------------------------------------------------
+
+@use "./functions" as functions;
+
+// This mixin to generate class of maximum size of table cell
+// Example of use : Simply put a class `width-50` - `width-500` on your <th> elements
+@mixin table_width {
+    $i: 50;
+    @while $i <=400 {
+        table .width-#{$i} {
+            width: #{$i}px !important;
+            max-width: #{$i}px !important;
+        }
+        $i: $i + 10;
+    }
+}
+
+// This mixin to generate font-size in px also rem units
+// Example of use : @include font_size(functions.std_val(font_size, body_md));
+@mixin font_size($size, $important: null) {
+    $sizeConvert: $size;
+    @if $important {
+        font-size: $sizeConvert !important;
+        font-size: calculateRem($sizeConvert) !important;
+    } @else {
+        font-size: $sizeConvert;
+        font-size: calculateRem($sizeConvert);
+    }
+}
+
+// This mixin generate the standard of typography in class
+// Example of use : class="text-xl" or class="title-md"
+$typographyCategorize: body, title, headline, display;
+@each $categorize in $typographyCategorize {
+    $typoSize: sm, md, lg;
+    @each $size in $typoSize {
+        // lc = local
+        .lc-#{$categorize}-#{$size} {
+            @include font_size(functions.std_val(font_size, #{$categorize}_#{$size}), !important);
+        }
+    }
+}
+
+// This mixin to generate typography / font-family settings locally
+// Example of use : @include font-face(RobotoRegular, fonts/Roboto-Regular, 400, normal, ttf);
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+    $extmods: (
+        eot: "?",
+        svg: "#" + str-replace($name, " ", "_"),
+    );
+    $formats: (
+        otf: "opentype",
+        ttf: "truetype",
+    );
+    @each $ext in $exts {
+        $extmod: if(map.has-key($extmods, $ext), $ext + map.get($extmods, $ext), $ext);
+        $format: if(map.has-key($formats, $ext), map.get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        font-display: swap;
+        src: $src;
+    }
+}
+
+// This mixin to generate justification classes for paragraph alignment
+// Example of use : @include justify(center)
+@mixin justify($position: left right center) {
+    text-align: justify;
+    text-align-last: $position;
+}
+
+// This mixin to setup components flexbox behaviour
+// Example of use : @include flexbox(flex, flex-start, center)
+@mixin flexbox($displayType: flex inline-flex, $justifyPos: flex-start flex-end center space-between space around space evenly, $alignItems: flex-start flex-end center baseline stretch) {
+    display: $displayType;
+    justify-content: $justifyPos;
+    align-items: $alignItems;
+}
+
+// This mixin to change windows scrollbar styles (Note: Only work on chrome / Mozilla)
+// Example of use : @include scrollbar(5px, #f4f4f4, rgba(0,0,0,.6), rgba(0,0,0,.8));
+@mixin scrollbar($size, $foregroundColor, $backgroundColor, $backgroundColorHover) {
+    // width
+    &::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+    }
+
+    // Track
+    &::-webkit-scrollbar-track {
+        background: $foregroundColor;
+        border-radius: 50px;
+    }
+
+    // Handle
+    &::-webkit-scrollbar-thumb {
+        background: $backgroundColor;
+        border-radius: 50px;
+    }
+
+    // Handle on hover
+    &::-webkit-scrollbar-thumb:hover {
+        background: $backgroundColorHover;
+    }
+
+    // For Internet Explorer
+    & {
+        scrollbar-face-color: $foregroundColor;
+        scrollbar-track-color: $backgroundColor;
+    }
+}
+
+// This mixin to clipping image in custom size
+// Example of use : @include clip-img(100px, $100px);
+@mixin clip-img($height, $width) {
+    height: $height;
+    width: $width;
+    object-fit: cover;
+}
+
+// This mixin is to put your styles responsively in specific windows width size
+// This mixin can be easily to put in your specific code of group (Mobile first)
+// Example of use : @include breakpoint(xl){ ... }, @include breakpoint(xl){ ... }, @include breakpoint(xl){ ... }
+@mixin breakpoint($breakpoint) {
+    @if ($breakpoint == xl) {
+        @media (min-width: 1250px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == lg) {
+        @media (min-width: 992px) and (max-width: 1249px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == md) {
+        @media (min-width: 768px) and (max-width: 991px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == sm) {
+        @media (min-width: 576px) and (max-width: 767px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == xs) {
+        @media (max-width: 575px) {
+            @content;
+        }
+    }
+}
+
+@mixin breakpoint_min($breakpoint) {
+    @if ($breakpoint == xl) {
+        @media (min-width: 1250px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == lg) {
+        @media (min-width: 1025px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == lg) {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == md) {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == sm) {
+        @media (min-width: 576px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == xs) {
+        @media (min-width: 320px) {
+            @content;
+        }
+    }
+}
+
+@mixin breakpoint_max($breakpoint) {
+    @if ($breakpoint == xl) {
+        @media (max-width: 1250px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == lg) {
+        @media (max-width: 992px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == custom-lg) {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == md) {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == custom-md) {
+        @media (max-width: 740px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == custom-sm) {
+        @media (max-width: 576px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == sm) {
+        @media (max-width: 576px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == xs) {
+        @media (max-width: 320px) {
+            @content;
+        }
+    }
+}
+
+/*
+================================
+This mixins below are purpose for styling only
+================================
+*/
+
+// This mixin to reset <ul> tag
+@mixin reset-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+// This mixin to setup text to be ellipsis overflow
+@mixin text-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+// This mixin affected image to be clipping in center of <div>
+@mixin cover-div-img {
+    background-position: center;
+    background-size: cover;
+}
+
+// This mixin affected image to be fixed in background
+@mixin fixed-img {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+// This mixin setup component to be 100% height & width
+@mixin full-screen {
+    width: 100%;
+    height: 100%;
+}
+
+// This mixin to make component flexbox center vertically
+@mixin flex-y {
+    display: flex;
+    flex-direction: column;
+}
+
+// This mixin to make component flexbox center horizontally
+@mixin flex-x {
+    display: flex;
+    flex-direction: row;
+}
+
+// This mixin to make component flexbox center vertically reverse
+@mixin flex-y-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+// This mixin to make component flexbox center horizontally reverse
+@mixin flex-x-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+// This mixin to make component flexbox center vertically & horizontally
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

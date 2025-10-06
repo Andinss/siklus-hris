@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"EditorConfig.EditorConfig",
+		"oxc.oxc-vscode",
+		"esbenp.prettier-vscode",
+		"shufo.vscode-blade-formatter",
+		"esbenp.prettier-vscode"
+	]
+}

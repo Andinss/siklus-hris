@@ -1,0 +1,50 @@
+// -----------------------------------------------------------------------------
+// This file contains switch ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.bootstrap-switch,
+.bootstrap-switch .bootstrap-switch-container {
+	border-radius: 2px;
+}
+.bootstrap-switch .bootstrap-switch-handle-on {
+	border-bottom-left-radius: 2px;
+	border-top-left-radius: 2px;
+}
+.bootstrap-switch .bootstrap-switch-handle-off {
+	border-bottom-right-radius: 2px;
+	border-top-right-radius: 2px;
+}
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
+	color: #fff;
+	background: #ab8ce4;
+}
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info {
+	color: #fff;
+	background: #03a9f3;
+}
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success {
+	color: #fff;
+	background: #00c292;
+}
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning {
+	color: #fff;
+	background: #fec107;
+}
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger {
+	color: #fff;
+	background: #fb9678;
+}
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default {
+	color: #2b2b2b;
+	background: #e4e7ea;
+}

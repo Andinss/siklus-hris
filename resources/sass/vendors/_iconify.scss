@@ -1,0 +1,24 @@
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+iconify-icon {
+	vertical-align: middle;
+	margin-right: 8px;
+	color: #333;
+}
+
+$iconSize: ('xs', 8px, 8px), ('sm', 12px, 12px), ('md', 16px, 16px), ('lg', 21px, 21px), ('xl', 24px, 24px), ('2xl', 28px, 28px);
+
+.iconify {
+	vertical-align: middle;
+	min-height: 21px;
+	min-width: 21px;
+
+	@each $state, $height, $width in $iconSize {
+		&.iconify-#{$state} {
+			min-height: $height;
+			min-width: $width;
+		}
+	}
+}

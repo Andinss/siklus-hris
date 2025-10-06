@@ -1,0 +1,89 @@
+// -----------------------------------------------------------------------------
+// This file contains base rules for sass
+// -----------------------------------------------------------------------------
+
+// Set background,text and selection condition color
+@charset "UTF-8";
+
+html,
+body {
+	position: relative;
+	width: 100%;
+	height: auto;
+	min-height: 100%;
+	margin: 0;
+	overflow-x: hidden;
+	background: standard(default, light_25);
+	color: standard(default, dark_25);
+}
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+section {
+	position: relative;
+	width: 100%;
+	padding: 1.25rem 0;
+	@include media_min(lg) {
+		padding: 2.5rem 0;
+	}
+}
+
+.container {
+	@include media_max(sm) {
+		padding: {
+			left: standard(spacing, md) !important;
+			right: standard(spacing, md) !important;
+		}
+	}
+}
+
+$newBgColor:
+	('dark', 25, 'dark_25', 'light_25'), ('dark', 50, 'dark_50', 'light_25'), ('dark', 75, 'dark_75', 'light_25'), ('dark', 100, 'dark_100', 'light_25'), ('grey', 10, 'grey_10', 'dark_50'), ('grey', 25, 'grey_25', 'dark_50'),
+	('grey', 50, 'grey_50', 'dark_50'), ('grey', 75, 'grey_75', 'dark_50'), ('grey', 100, 'grey_100', 'dark_50'), ('blue-grey', 10, 'blue_grey_10', 'dark_50'), ('blue-grey', 25, 'blue_grey_25', 'dark_50'),
+	('blue-grey', 50, 'blue_grey_50', 'dark_50'), ('blue-grey', 75, 'blue_grey_75', 'dark_50'), ('blue-grey', 100, 'blue_grey_100', 'dark_50'), ('lime', 10, 'lime_10', 'lime_100'), ('lime', 25, 'lime_25', 'dark_25'),
+	('lime', 50, 'lime_50', 'light_25'), ('lime', 75, 'lime_75', 'light_25'), ('lime', 100, 'lime_100', 'light_25'), ('light', 25, 'light_25', 'dark_25'), ('light', 50, 'light_50', 'dark_25'), ('light', 75, 'light_75', 'dark_25'),
+	('light', 100, 'light_100', 'dark_25'), ('blue', 10, 'blue_10', 'blue_100'), ('blue', 25, 'blue_25', 'light_25'), ('blue', 50, 'blue_50', 'light_25'), ('blue', 75, 'blue_75', 'light_25'), ('blue', 100, 'blue_100', 'light_25'),
+	('warning', 10, 'warning_10', 'warning_100'), ('warning', 25, 'warning_25', 'warning_100'), ('warning', 50, 'warning_50', 'light_25'), ('warning', 75, 'warning_75', 'light_25'), ('warning', 100, 'warning_100', 'light_25'),
+	('danger', 10, 'danger_10', 'danger_100'), ('danger', 25, 'danger_25', 'danger_100'), ('danger', 50, 'danger_50', 'light_25'), ('danger', 75, 'danger_75', 'light_25'), ('danger', 100, 'danger_100', 'light_25'),
+	('info', 10, 'info_10', 'info_100'), ('info', 25, 'info_25', 'info_100'), ('info', 50, 'info_50', 'light_25'), ('info', 75, 'info_75', 'light_25'), ('info', 100, 'info_100', 'light_25'), ('secondary', 10, 'secondary_10', 'dark_100'),
+	('secondary', 25, 'secondary_25', 'dark_100'), ('secondary', 50, 'secondary_50', 'dark_100'), ('secondary', 75, 'secondary_75', 'dark_100'), ('secondary', 100, 'secondary_100', 'dark_100'), ('primary', 10, 'primary_10', 'dark_100'),
+	('primary', 25, 'primary_25', 'dark_100'), ('primary', 50, 'primary_50', 'light_25'), ('primary', 75, 'primary_75', 'light_25'), ('primary', 100, 'primary_100', 'light_25');
+
+@each $state, $level, $color, $textColor in $newBgColor {
+	.std-bg-#{$state}-#{$level} {
+		background-color: unset;
+		background: standard(default, #{$color});
+		color: standard(default, #{$textColor}) !important;
+	}
+	.std-txt-#{$state}-#{$level} {
+		color: standard(default, #{$color}) !important;
+	}
+	a {
+		&.std-bg-#{$state}-#{$level} {
+			background-color: unset;
+			background: standard(default, #{$color});
+			color: standard(default, #{$textColor}) !important;
+			&:hover {
+				opacity: 0.75;
+			}
+		}
+		&.std-txt-#{$state}-#{$level} {
+			color: standard(default, #{$color}) !important;
+			&:hover {
+				color: standard(default, #{$color});
+				opacity: 0.75;
+			}
+		}
+	}
+}
+
+#page-wrapper {
+	padding: 0 0 60px;
+	min-height: 568px;
+	background: standard(default, blue_grey_10);
+}
+#wrapper {
+	width: 100%;
+}

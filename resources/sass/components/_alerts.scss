@@ -1,0 +1,78 @@
+// -----------------------------------------------------------------------------
+// This file contains alert ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.alert {
+	@include fonts.use_font(body_medium_md);
+	border-radius: 8px;
+	background: functions.std_val(material_color, red_100);
+	color: functions.std_val(material_color, red_800);
+	margin-bottom: 24px;
+}
+// .alert-custom {
+// 	background: #ff6849;
+// 	color: #fff;
+// 	border-color: #ff6849;
+// }
+// .alert-inverse {
+// 	background: #4c5667;
+// 	color: #fff;
+// 	border-color: #4c5667;
+// }
+// .alert-success {
+// 	background: #00c292;
+// 	color: #fff;
+// 	border-color: #00c292;
+// }
+// .alert-dark {
+// 	background: #686868;
+// 	color: #fff;
+// 	border-color: #686868;
+// }
+// .alert-warning {
+// 	background: #fec107;
+// 	color: #fff;
+// 	border-color: #fec107;
+// }
+// .alert-danger {
+// 	background: #fb9678;
+// 	color: #fff;
+// 	border-color: #fb9678;
+// }
+// .alert-primary {
+// 	background: #9675ce;
+// 	color: #fff;
+// 	border-color: #9675ce;
+// }
+// .alert-info {
+// 	background: #03a9f3;
+// 	color: #fff;
+// 	border-color: #03a9f3;
+// }
+// .alert-info .closed,
+// .alert-info a.closed:hover {
+// 	color: inherit;
+// }
+.error-box {
+	height: 100%;
+	position: fixed;
+	background: url('/plugin/assets/plugins/images/error-bg.jpg') center center no-repeat #fff !important;
+	width: 100%;
+}
+.error-box .footer {
+	width: 100%;
+	left: 0;
+	right: 0;
+}
+.error-body {
+	padding-top: 5%;
+}
+.error-body h1 {
+	font-size: 210px;
+	font-weight: 900;
+	line-height: 210px;
+}

@@ -1,0 +1,142 @@
+// -----------------------------------------------------------------------------
+// This file contains progress ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.progress {
+	-webkit-box-shadow: none !important;
+	background-color: rgba(120, 130, 140, 0.13);
+	box-shadow: none !important;
+	height: 4px;
+	border-radius: 2px;
+	margin-bottom: 18px;
+	overflow: hidden;
+}
+.progress-bar {
+	box-shadow: none;
+	font-size: 8px;
+	font-weight: 600;
+	line-height: 12px;
+}
+.progress.progress-sm {
+	height: 8px !important;
+}
+.progress.progress-sm .progress-bar {
+	font-size: 8px;
+	line-height: 5px;
+}
+.progress.progress-md {
+	height: 15px !important;
+}
+.progress.progress-md .progress-bar {
+	font-size: 10.8px;
+	line-height: 14.4px;
+}
+.progress.progress-lg {
+	height: 20px !important;
+}
+.progress.progress-lg .progress-bar {
+	font-size: 12px;
+	line-height: 20px;
+}
+.progress-bar-primary {
+	background-color: #ab8ce4;
+}
+.progress-bar-success {
+	background-color: #00c292;
+}
+.progress-bar-info {
+	background-color: #03a9f3;
+}
+.progress-bar-megna {
+	background-color: #01c0c8;
+}
+.progress-bar-warning {
+	background-color: #fec107;
+}
+.progress-bar-danger {
+	background-color: #fb9678;
+}
+.progress-bar-inverse {
+	background-color: #4c5667;
+}
+.progress-bar-purple {
+	background-color: #9675ce;
+}
+.progress-bar-custom {
+	background-color: #03a9f3;
+}
+.progress-animated {
+	-webkit-animation-duration: 5s;
+	-webkit-animation-name: myanimation;
+	-webkit-transition: 5s all;
+	animation-duration: 5s;
+	animation-name: myanimation;
+	transition: 5s all;
+}
+@-webkit-keyframes myanimation {
+	from {
+		width: 0;
+	}
+}
+@keyframes myanimation {
+	from {
+		width: 0;
+	}
+}
+.progress-vertical {
+	min-height: 250px;
+	height: 250px;
+	width: 4px;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 0;
+	margin-right: 20px;
+}
+.progress-vertical .progress-bar {
+	width: 100%;
+}
+.progress-vertical-bottom {
+	min-height: 250px;
+	height: 250px;
+	position: relative;
+	width: 4px;
+	display: inline-block;
+	margin-bottom: 0;
+	margin-right: 20px;
+}
+.progress-vertical-bottom .progress-bar {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+.progress-vertical-bottom.progress-sm,
+.progress-vertical.progress-sm {
+	width: 8px !important;
+}
+.progress-vertical-bottom.progress-sm .progress-bar,
+.progress-vertical.progress-sm .progress-bar {
+	font-size: 8px;
+	line-height: 5px;
+}
+.progress-vertical-bottom.progress-md,
+.progress-vertical.progress-md {
+	width: 15px !important;
+}
+.progress-vertical-bottom.progress-md .progress-bar,
+.progress-vertical.progress-md .progress-bar {
+	font-size: 10.8px;
+	line-height: 14.4px;
+}
+.progress-vertical-bottom.progress-lg,
+.progress-vertical.progress-lg {
+	width: 20px !important;
+}
+.progress-vertical-bottom.progress-lg .progress-bar,
+.progress-vertical.progress-lg .progress-bar {
+	font-size: 12px;
+	line-height: 20px;
+}

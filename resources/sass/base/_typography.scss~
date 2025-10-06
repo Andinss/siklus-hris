@@ -1,0 +1,126 @@
+// -----------------------------------------------------------------------------
+// This file contains typography rules
+// -----------------------------------------------------------------------------
+
+body {
+	@include font-type('Regular');
+	@include font_size(set(base, md), !important);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	transition: 0.5s;
+	&:hover {
+		text-decoration: underline;
+		color: standard(default, primary);
+		transition: 0.5s;
+	}
+	&.highlight {
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+			transition: 0.5s;
+		}
+	}
+}
+
+p {
+	margin-bottom: 0;
+}
+
+h1,
+.h1 {
+	@include font_size(set(header, lg), !important);
+	@include media_min(md) {
+		@include font_size(set(header, xl), !important);
+	}
+}
+
+h2 {
+	@include font_size(set(header, md), !important);
+	@include media_min(md) {
+		@include font_size(set(header, lg), !important);
+	}
+}
+
+h5,
+.h5 {
+	@include font_size(set(base, lg), !important);
+	@include media_min(md) {
+		@include font_size(set(header, sm), !important);
+	}
+}
+
+h6,
+.h6 {
+	@include font_size(set(base, md), !important);
+	@include media_min(md) {
+		@include font_size(set(base, lg), !important);
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1 !important;
+	color: standard(default, dark_50);
+	font-family: Poppins, sans-serif;
+	@include font-type('SemiBold');
+	margin-bottom: standard(spacing, sm);
+	@include media_min(md) {
+		margin-bottom: standard(spacing, md);
+	}
+}
+
+a:active,
+a:focus,
+a:hover {
+	outline: 0;
+	text-decoration: none;
+}
+a.fc-event:not([href]):not([tabindex]) {
+	color: #fff;
+}
+.light_op_text {
+	color: rgba(255, 255, 255, 0.5);
+}
+blockquote {
+	border-left: 5px solid #ff6849 !important;
+	border: 1px solid rgba(120, 130, 140, 0.13);
+}
+p {
+	line-height: 1.6;
+}
+b {
+	font-weight: 600;
+}
+a:active,
+a:focus,
+a:hover {
+	outline: 0;
+	text-decoration: none;
+}
+.font-12 {
+	font-size: 12px;
+}
+.font-bold {
+	font-weight: 700;
+}
+.font-normal {
+	font-weight: 400;
+}
+.font-light {
+	font-weight: 300;
+}
+blockquote {
+	padding: 10px 20px;
+	margin: 0 0 20px;
+	font-size: 17.5px;
+}
+.page-title {
+	margin-bottom: 0 !important;
+}

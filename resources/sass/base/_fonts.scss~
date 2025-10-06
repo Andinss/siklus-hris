@@ -1,0 +1,111 @@
+// -----------------------------------------------------------------------------
+// This file contains fonts configuration that your site will used (BETA)
+// -----------------------------------------------------------------------------
+
+$fontName: 'Poppins';
+
+// Simply used text type in your application site
+// Example of use: class="text-bold" or class="text-regular"
+$fontType:
+	(
+		'regular',
+		sans-serif,
+		400,
+		0,
+		'https://fonts.googleapis.com/css?family=Poppins:400'
+	),
+	(
+		'regular-italic',
+		sans-serif,
+		400,
+		1,
+		'https://fonts.googleapis.com/css?family=Poppins:400'
+	),
+	(
+		'semi-bold',
+		sans-serif,
+		500,
+		0,
+		'https://fonts.googleapis.com/css?family=Poppins:500'
+	),
+	(
+		'semi-bold-italic',
+		sans-serif,
+		500,
+		1,
+		'https://fonts.googleapis.com/css?family=Poppins:500'
+	),
+	(
+		'bold',
+		sans-serif,
+		700,
+		0,
+		'https://fonts.googleapis.com/css?family=Poppins:700'
+	),
+	(
+		'bold-italic',
+		sans-serif,
+		700,
+		1,
+		'https://fonts.googleapis.com/css?family=Poppins:700'
+	);
+
+@each $class, $family, $weight, $style, $filename in $fontType {
+	@font-face {
+		font-family: $fontName;
+		font-weight: $weight;
+		font-display: swap;
+		@if ($style == 1) {
+			font-style: italic;
+		}
+		@if ($style == 0) {
+			font-style: normal;
+		}
+		src: url($filename) format('woff2');
+	}
+	.text-#{$class} {
+		font-family: $fontName, $family !important;
+		font-weight: $weight !important;
+		@if ($style == 1) {
+			font-style: italic;
+		}
+		@if ($style == 0) {
+			font-style: normal;
+		}
+	}
+}
+
+// Font type mixins Settings
+// Example use: @include font-type(type of font);
+@mixin font-type($type) {
+	@if ($type == 'Regular') {
+		@extend .text-regular;
+	}
+	@if ($type == 'RegularItalic') {
+		@extend .text-regular-italic;
+	}
+	@if ($type == 'SemiBold') {
+		@extend .text-semi-bold;
+	}
+	@if ($type == 'SemiBoldItalic') {
+		@extend .text-semi-bold-italic;
+	}
+	@if ($type == 'Bold') {
+		@extend .text-bold;
+	}
+	@if ($type == 'Bolditalic') {
+		@extend .text-bold-italic;
+	}
+}
+
+// You can simply called font-size in your class attribute
+// Example of use: class="base-xl" or class="header-md"
+$typoStates: 'base', 'header';
+@each $states in $typoStates {
+	$typoSize: xxs, xs, sm, md, lg, xl, xxl;
+	@each $size in $typoSize {
+		.#{$states}-#{$size} {
+			@include font_size(set(#{$states}, #{$size}), !important);
+		}
+	}
+}

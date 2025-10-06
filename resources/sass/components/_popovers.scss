@@ -1,0 +1,81 @@
+// -----------------------------------------------------------------------------
+// This file contains popovers ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.popover {
+	border-radius: 2px;
+}
+.popover-title {
+	padding: 5px 14px;
+}
+.popover {
+	-webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.popover,
+.popover-title,
+.tooltip {
+	font-family: Poppins, sans-serif;
+	font-size: 13px;
+}
+.popover-title {
+	margin-top: 0;
+}
+.note-popover {
+	display: none;
+}
+.note-editor {
+	border: 0;
+}
+.popover .popover-title {
+	border-radius: 0;
+}
+.popover-primary + .popover .popover-title {
+	color: #fff;
+	background-color: #ab8ce4;
+	border-color: #ab8ce4;
+}
+.popover-primary + .popover.bottom .arrow,
+.popover-primary + .popover.bottom .arrow:after {
+	border-bottom-color: #ab8ce4;
+}
+.popover-success + .popover .popover-title {
+	color: #fff;
+	background-color: #00c292;
+	border-color: #00c292;
+}
+.popover-success + .popover.bottom .arrow,
+.popover-success + .popover.bottom .arrow:after {
+	border-bottom-color: #00c292;
+}
+.popover-info + .popover .popover-title {
+	color: #fff;
+	background-color: #03a9f3;
+	border-color: #03a9f3;
+}
+.popover-info + .popover.bottom .arrow,
+.popover-info + .popover.bottom .arrow:after {
+	border-bottom-color: #03a9f3;
+}
+.popover-warning + .popover .popover-title {
+	color: #fff;
+	background-color: #fec107;
+	border-color: #fec107;
+}
+.popover-warning + .popover.bottom .arrow,
+.popover-warning + .popover.bottom .arrow:after {
+	border-bottom-color: #fec107;
+}
+.popover-danger + .popover .popover-title {
+	color: #fff;
+	background-color: #fb9678;
+	border-color: #fb9678;
+}
+.popover-danger + .popover.bottom .arrow,
+.popover-danger + .popover.bottom .arrow:after {
+	border-bottom-color: #fb9678;
+}

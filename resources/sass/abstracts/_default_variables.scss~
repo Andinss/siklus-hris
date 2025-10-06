@@ -1,0 +1,3604 @@
+// -----------------------------------------------------------------------------
+// This file contains sass variable rules
+// -----------------------------------------------------------------------------
+
+// Font size rules
+$font-size: (
+	base: (
+		xxs: 8px,
+		xs: 10px,
+		sm: 12px,
+		md: 14px,
+		lg: 16px,
+		xl: 18px,
+		xxl: 21px,
+	),
+	header: (
+		xxs: 16px,
+		xs: 18px,
+		sm: 20px,
+		md: 24px,
+		lg: 28px,
+		xl: 40px,
+		xxl: 52px,
+		display_3: 64px,
+		display_2: 72px,
+		display_1: 84px,
+		jumbo: 100px,
+	),
+);
+
+// Custom color rules
+$custom-palettes: (
+	transparent_white: (
+		5: rgba(255, 255, 255, 0.05),
+		10: rgba(255, 255, 255, 0.1),
+		20: rgba(255, 255, 255, 0.2),
+		30: rgba(255, 255, 255, 0.3),
+		40: rgba(255, 255, 255, 0.4),
+		50: rgba(255, 255, 255, 0.5),
+		60: rgba(255, 255, 255, 0.6),
+		70: rgba(255, 255, 255, 0.7),
+		80: rgba(255, 255, 255, 0.8),
+		90: rgba(255, 255, 255, 0.9),
+		100: rgba(255, 255, 255, 1),
+	),
+	transparent_black: (
+		5: rgba(0, 0, 0, 0.05),
+		10: rgba(0, 0, 0, 0.1),
+		20: rgba(0, 0, 0, 0.2),
+		30: rgba(0, 0, 0, 0.3),
+		40: rgba(0, 0, 0, 0.4),
+		50: rgba(0, 0, 0, 0.5),
+		60: rgba(0, 0, 0, 0.6),
+		70: rgba(0, 0, 0, 0.7),
+		80: rgba(0, 0, 0, 0.8),
+		90: rgba(0, 0, 0, 0.9),
+		100: rgba(0, 0, 0, 1),
+	),
+);
+
+// Material color rules from https://material-ui.com/customization/color/
+$material: (
+	red: (
+		50: #f7f8f9,
+		100: #ffcdd2,
+		200: #ef9a9a,
+		300: #e57373,
+		400: #ef5350,
+		500: #f44336,
+		600: #e53935,
+		700: #d32f2f,
+		800: #c62828,
+		900: #b71c1c,
+		light: #ff8a80,
+		lighter: #ff5252,
+		dark: #ff1744,
+		darker: #d50000,
+	),
+	pink: (
+		50: #fce4ec,
+		100: #f8bbd0,
+		200: #f48fb1,
+		300: #f06292,
+		400: #ec407a,
+		500: #e91e63,
+		600: #d81b60,
+		700: #c2185b,
+		800: #ad1457,
+		900: #880e4f,
+		light: #ff80ab,
+		lighter: #ff4081,
+		dark: #f50057,
+		darker: #c51162,
+	),
+	purple: (
+		50: #f3e5f5,
+		100: #e1bee7,
+		200: #ce93d8,
+		300: #ba68c8,
+		400: #ab47bc,
+		500: #9c27b0,
+		600: #8e24aa,
+		700: #7b1fa2,
+		800: #6a1b9a,
+		900: #4a148c,
+		light: #ea80fc,
+		lighter: #e040fb,
+		dark: #d500f9,
+		darker: #aa00ff,
+	),
+	deep_purple: (
+		50: #ede7f6,
+		100: #d1c4e9,
+		200: #b39ddb,
+		300: #9575cd,
+		400: #7e57c2,
+		500: #673ab7,
+		600: #5e35b1,
+		700: #512da8,
+		800: #4527a0,
+		900: #311b92,
+		light: #b388ff,
+		lighter: #7c4dff,
+		dark: #651fff,
+		darker: #6200ea,
+	),
+	indigo: (
+		50: #e8eaf6,
+		100: #c5cae9,
+		200: #9fa8da,
+		300: #7986cb,
+		400: #5c6bc0,
+		500: #3f51b5,
+		600: #3949ab,
+		700: #303f9f,
+		800: #283593,
+		900: #1a237e,
+		light: #8c9eff,
+		lighter: #536dfe,
+		dark: #3d5afe,
+		darker: #304ffe,
+	),
+	blue: (
+		50: #e3f2fd,
+		100: #bbdefb,
+		200: #90caf9,
+		300: #64b5f6,
+		400: #42a5f5,
+		500: #2196f3,
+		600: #1e88e5,
+		700: #1976d2,
+		800: #1565c0,
+		900: #0d47a1,
+		light: #82b1ff,
+		lighter: #448aff,
+		dark: #2979ff,
+		darker: #2962ff,
+	),
+	light_blue: (
+		50: #e1f5fe,
+		100: #b3e5fc,
+		200: #81d4fa,
+		300: #4fc3f7,
+		400: #29b6f6,
+		500: #03a9f4,
+		600: #039be5,
+		700: #0288d1,
+		800: #0277bd,
+		900: #01579b,
+		light: #80d8ff,
+		lighter: #40c4ff,
+		dark: #00b0ff,
+		darker: #0091ea,
+	),
+	cyan: (
+		50: #e0f7fa,
+		100: #b2ebf2,
+		200: #80deea,
+		300: #4dd0e1,
+		400: #26c6da,
+		500: #00bcd4,
+		600: #00acc1,
+		700: #0097a7,
+		800: #00838f,
+		900: #006064,
+		light: #84ffff,
+		lighter: #18ffff,
+		dark: #00e5ff,
+		darker: #00b8d4,
+	),
+	teal: (
+		50: #e0f2f1,
+		100: #b2dfdb,
+		200: #80cbc4,
+		300: #4db6ac,
+		400: #26a69a,
+		500: #009688,
+		600: #00897b,
+		700: #00796b,
+		800: #00695c,
+		900: #004d40,
+		light: #a7ffeb,
+		lighter: #64ffda,
+		dark: #1de9b6,
+		darker: #00bfa5,
+	),
+	green: (
+		50: #e8f5e9,
+		100: #c8e6c9,
+		200: #a5d6a7,
+		300: #81c784,
+		400: #66bb6a,
+		500: #4caf50,
+		600: #43a047,
+		700: #388e3c,
+		800: #2e7d32,
+		900: #1b5e20,
+		light: #b9f6ca,
+		lighter: #69f0ae,
+		dark: #00e676,
+		darker: #00c853,
+	),
+	light_green: (
+		50: #f1f8e9,
+		100: #dcedc8,
+		200: #c5e1a5,
+		300: #aed581,
+		400: #9ccc65,
+		500: #8bc34a,
+		600: #7cb342,
+		700: #689f38,
+		800: #558b2f,
+		900: #33691e,
+		light: #ccff90,
+		lighter: #b2ff59,
+		dark: #76ff03,
+		darker: #64dd17,
+	),
+	lime: (
+		50: #f9fbe7,
+		100: #f0f4c3,
+		200: #e6ee9c,
+		300: #dce775,
+		400: #d4e157,
+		500: #cddc39,
+		600: #c0ca33,
+		700: #afb42b,
+		800: #9e9d24,
+		900: #827717,
+		light: #f4ff81,
+		lighter: #eeff41,
+		dark: #c6ff00,
+		darker: #aeea00,
+	),
+	yellow: (
+		50: #fffde7,
+		100: #fff9c4,
+		200: #fff59d,
+		300: #fff176,
+		400: #ffee58,
+		500: #ffeb3b,
+		600: #fdd835,
+		700: #fbc02d,
+		800: #f9a825,
+		900: #f57f17,
+		light: #ffff8d,
+		lighter: #ffff00,
+		dark: #ffea00,
+		darker: #ffd600,
+	),
+	amber: (
+		50: #fff8e1,
+		100: #ffecb3,
+		200: #ffe082,
+		300: #ffd54f,
+		400: #ffca28,
+		500: #ffc107,
+		600: #ffb300,
+		700: #ffa000,
+		800: #ff8f00,
+		900: #ff6f00,
+		light: #ffe57f,
+		lighter: #ffd740,
+		dark: #ffc400,
+		darker: #ffab00,
+	),
+	orange: (
+		50: #fff3e0,
+		100: #ffe0b2,
+		200: #ffcc80,
+		300: #ffb74d,
+		400: #ffa726,
+		500: #ff9800,
+		600: #fb8c00,
+		700: #f57c00,
+		800: #ef6c00,
+		900: #e65100,
+		light: #ffd180,
+		lighter: #ffab40,
+		dark: #ff9100,
+		darker: #ff6d00,
+	),
+	deep_orange: (
+		50: #fbe9e7,
+		100: #ffccbc,
+		200: #ffab91,
+		300: #ff8a65,
+		400: #ff7043,
+		500: #ff5722,
+		600: #f4511e,
+		700: #e64a19,
+		800: #d84315,
+		900: #bf360c,
+		light: #ff9e80,
+		lighter: #ff6e40,
+		dark: #ff3d00,
+		darker: #dd2c00,
+	),
+	brown: (
+		50: #efebe9,
+		100: #d7ccc8,
+		200: #bcaaa4,
+		300: #a1887f,
+		400: #8d6e63,
+		500: #795548,
+		600: #6d4c41,
+		700: #5d4037,
+		800: #4e342e,
+		900: #3e2723,
+	),
+	grey: (
+		50: #fafafa,
+		100: #f5f5f5,
+		200: #eeeeee,
+		300: #e0e0e0,
+		400: #bdbdbd,
+		500: #9e9e9e,
+		600: #757575,
+		700: #616161,
+		800: #424242,
+		900: #212121,
+	),
+	blue_grey: (
+		50: #eceff1,
+		100: #cfd8dc,
+		200: #b0bec5,
+		300: #90a4ae,
+		400: #78909c,
+		500: #607d8b,
+		600: #546e7a,
+		700: #455a64,
+		800: #37474f,
+		900: #263238,
+	),
+);
+
+$xs_shadow: 0px 6px 12px -6px;
+$sm_shadow: 0px 10px 14px -10px;
+$md_shadow: 0px 12px 28px -12px;
+$lg_shadow: 0px 14px 34px -14px;
+$xl_shadow: 0px 18px 44px -18px;
+
+$material-shadow: (
+	black: (
+		xs: (
+			10: (
+				$xs_shadow rgba(47, 117, 177, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(47, 117, 177, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(47, 117, 177, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(47, 117, 177, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(47, 117, 177, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(47, 117, 177, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(47, 117, 177, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(47, 117, 177, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(47, 117, 177, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(47, 117, 177, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(47, 117, 177, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(47, 117, 177, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(47, 117, 177, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(47, 117, 177, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(47, 117, 177, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(47, 117, 177, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(47, 117, 177, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(47, 117, 177, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(47, 117, 177, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(47, 117, 177, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(47, 117, 177, 0.1),
+			),
+			20: (
+				$md_shadow rgba(47, 117, 177, 0.2),
+			),
+			30: (
+				$md_shadow rgba(47, 117, 177, 0.3),
+			),
+			40: (
+				$md_shadow rgba(47, 117, 177, 0.4),
+			),
+			50: (
+				$md_shadow rgba(47, 117, 177, 0.5),
+			),
+			60: (
+				$md_shadow rgba(47, 117, 177, 0.6),
+			),
+			70: (
+				$md_shadow rgba(47, 117, 177, 0.7),
+			),
+			80: (
+				$md_shadow rgba(47, 117, 177, 0.8),
+			),
+			90: (
+				$md_shadow rgba(47, 117, 177, 0.9),
+			),
+			100: (
+				$md_shadow rgba(47, 117, 177, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(47, 117, 177, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(47, 117, 177, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(47, 117, 177, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(47, 117, 177, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(47, 117, 177, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(47, 117, 177, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(47, 117, 177, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(47, 117, 177, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(47, 117, 177, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(47, 117, 177, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(47, 117, 177, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(47, 117, 177, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(47, 117, 177, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(47, 117, 177, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(47, 117, 177, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(47, 117, 177, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(47, 117, 177, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(47, 117, 177, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(47, 117, 177, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(47, 117, 177, 1),
+			),
+		),
+	),
+	red: (
+		xs: (
+			10: (
+				$xs_shadow rgba(244, 67, 54, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(244, 67, 54, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(244, 67, 54, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(244, 67, 54, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(244, 67, 54, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(244, 67, 54, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(244, 67, 54, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(244, 67, 54, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(244, 67, 54, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(244, 67, 54, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(244, 67, 54, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(244, 67, 54, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(244, 67, 54, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(244, 67, 54, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(244, 67, 54, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(244, 67, 54, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(244, 67, 54, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(244, 67, 54, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(244, 67, 54, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(244, 67, 54, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(244, 67, 54, 0.1),
+			),
+			20: (
+				$md_shadow rgba(244, 67, 54, 0.2),
+			),
+			30: (
+				$md_shadow rgba(244, 67, 54, 0.3),
+			),
+			40: (
+				$md_shadow rgba(244, 67, 54, 0.4),
+			),
+			50: (
+				$md_shadow rgba(244, 67, 54, 0.5),
+			),
+			60: (
+				$md_shadow rgba(244, 67, 54, 0.6),
+			),
+			70: (
+				$md_shadow rgba(244, 67, 54, 0.7),
+			),
+			80: (
+				$md_shadow rgba(244, 67, 54, 0.8),
+			),
+			90: (
+				$md_shadow rgba(244, 67, 54, 0.9),
+			),
+			100: (
+				$md_shadow rgba(244, 67, 54, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(244, 67, 54, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(244, 67, 54, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(244, 67, 54, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(244, 67, 54, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(244, 67, 54, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(244, 67, 54, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(244, 67, 54, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(244, 67, 54, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(244, 67, 54, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(244, 67, 54, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(244, 67, 54, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(244, 67, 54, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(244, 67, 54, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(244, 67, 54, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(244, 67, 54, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(244, 67, 54, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(244, 67, 54, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(244, 67, 54, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(244, 67, 54, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(244, 67, 54, 1),
+			),
+		),
+	),
+	pink: (
+		xs: (
+			10: (
+				$xs_shadow rgba(233, 30, 99, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(233, 30, 99, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(233, 30, 99, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(233, 30, 99, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(233, 30, 99, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(233, 30, 99, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(233, 30, 99, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(233, 30, 99, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(233, 30, 99, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(233, 30, 99, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(233, 30, 99, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(233, 30, 99, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(233, 30, 99, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(233, 30, 99, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(233, 30, 99, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(233, 30, 99, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(233, 30, 99, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(233, 30, 99, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(233, 30, 99, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(233, 30, 99, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(233, 30, 99, 0.1),
+			),
+			20: (
+				$md_shadow rgba(233, 30, 99, 0.2),
+			),
+			30: (
+				$md_shadow rgba(233, 30, 99, 0.3),
+			),
+			40: (
+				$md_shadow rgba(233, 30, 99, 0.4),
+			),
+			50: (
+				$md_shadow rgba(233, 30, 99, 0.5),
+			),
+			60: (
+				$md_shadow rgba(233, 30, 99, 0.6),
+			),
+			70: (
+				$md_shadow rgba(233, 30, 99, 0.7),
+			),
+			80: (
+				$md_shadow rgba(233, 30, 99, 0.8),
+			),
+			90: (
+				$md_shadow rgba(233, 30, 99, 0.9),
+			),
+			100: (
+				$md_shadow rgba(233, 30, 99, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(233, 30, 99, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(233, 30, 99, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(233, 30, 99, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(233, 30, 99, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(233, 30, 99, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(233, 30, 99, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(233, 30, 99, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(233, 30, 99, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(233, 30, 99, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(233, 30, 99, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(233, 30, 99, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(233, 30, 99, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(233, 30, 99, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(233, 30, 99, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(233, 30, 99, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(233, 30, 99, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(233, 30, 99, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(233, 30, 99, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(233, 30, 99, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(233, 30, 99, 1),
+			),
+		),
+	),
+	purple: (
+		xs: (
+			10: (
+				$xs_shadow rgba(156, 39, 176, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(156, 39, 176, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(156, 39, 176, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(156, 39, 176, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(156, 39, 176, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(156, 39, 176, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(156, 39, 176, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(156, 39, 176, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(156, 39, 176, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(156, 39, 176, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(156, 39, 176, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(156, 39, 176, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(156, 39, 176, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(156, 39, 176, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(156, 39, 176, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(156, 39, 176, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(156, 39, 176, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(156, 39, 176, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(156, 39, 176, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(156, 39, 176, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(156, 39, 176, 0.1),
+			),
+			20: (
+				$md_shadow rgba(156, 39, 176, 0.2),
+			),
+			30: (
+				$md_shadow rgba(156, 39, 176, 0.3),
+			),
+			40: (
+				$md_shadow rgba(156, 39, 176, 0.4),
+			),
+			50: (
+				$md_shadow rgba(156, 39, 176, 0.5),
+			),
+			60: (
+				$md_shadow rgba(156, 39, 176, 0.6),
+			),
+			70: (
+				$md_shadow rgba(156, 39, 176, 0.7),
+			),
+			80: (
+				$md_shadow rgba(156, 39, 176, 0.8),
+			),
+			90: (
+				$md_shadow rgba(156, 39, 176, 0.9),
+			),
+			100: (
+				$md_shadow rgba(156, 39, 176, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(156, 39, 176, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(156, 39, 176, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(156, 39, 176, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(156, 39, 176, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(156, 39, 176, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(156, 39, 176, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(156, 39, 176, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(156, 39, 176, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(156, 39, 176, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(156, 39, 176, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(156, 39, 176, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(156, 39, 176, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(156, 39, 176, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(156, 39, 176, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(156, 39, 176, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(156, 39, 176, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(156, 39, 176, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(156, 39, 176, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(156, 39, 176, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(156, 39, 176, 1),
+			),
+		),
+	),
+	deep_purple: (
+		xs: (
+			10: (
+				$xs_shadow rgba(126, 87, 194, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(126, 87, 194, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(126, 87, 194, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(126, 87, 194, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(126, 87, 194, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(126, 87, 194, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(126, 87, 194, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(126, 87, 194, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(126, 87, 194, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(126, 87, 194, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(126, 87, 194, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(126, 87, 194, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(126, 87, 194, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(126, 87, 194, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(126, 87, 194, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(126, 87, 194, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(126, 87, 194, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(126, 87, 194, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(126, 87, 194, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(126, 87, 194, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(126, 87, 194, 0.1),
+			),
+			20: (
+				$md_shadow rgba(126, 87, 194, 0.2),
+			),
+			30: (
+				$md_shadow rgba(126, 87, 194, 0.3),
+			),
+			40: (
+				$md_shadow rgba(126, 87, 194, 0.4),
+			),
+			50: (
+				$md_shadow rgba(126, 87, 194, 0.5),
+			),
+			60: (
+				$md_shadow rgba(126, 87, 194, 0.6),
+			),
+			70: (
+				$md_shadow rgba(126, 87, 194, 0.7),
+			),
+			80: (
+				$md_shadow rgba(126, 87, 194, 0.8),
+			),
+			90: (
+				$md_shadow rgba(126, 87, 194, 0.9),
+			),
+			100: (
+				$md_shadow rgba(126, 87, 194, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(126, 87, 194, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(126, 87, 194, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(126, 87, 194, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(126, 87, 194, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(126, 87, 194, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(126, 87, 194, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(126, 87, 194, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(126, 87, 194, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(126, 87, 194, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(126, 87, 194, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(126, 87, 194, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(126, 87, 194, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(126, 87, 194, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(126, 87, 194, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(126, 87, 194, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(126, 87, 194, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(126, 87, 194, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(126, 87, 194, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(126, 87, 194, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(126, 87, 194, 1),
+			),
+		),
+	),
+	indigo: (
+		xs: (
+			10: (
+				$xs_shadow rgba(63, 81, 181, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(63, 81, 181, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(63, 81, 181, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(63, 81, 181, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(63, 81, 181, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(63, 81, 181, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(63, 81, 181, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(63, 81, 181, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(63, 81, 181, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(63, 81, 181, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(63, 81, 181, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(63, 81, 181, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(63, 81, 181, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(63, 81, 181, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(63, 81, 181, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(63, 81, 181, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(63, 81, 181, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(63, 81, 181, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(63, 81, 181, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(63, 81, 181, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(63, 81, 181, 0.1),
+			),
+			20: (
+				$md_shadow rgba(63, 81, 181, 0.2),
+			),
+			30: (
+				$md_shadow rgba(63, 81, 181, 0.3),
+			),
+			40: (
+				$md_shadow rgba(63, 81, 181, 0.4),
+			),
+			50: (
+				$md_shadow rgba(63, 81, 181, 0.5),
+			),
+			60: (
+				$md_shadow rgba(63, 81, 181, 0.6),
+			),
+			70: (
+				$md_shadow rgba(63, 81, 181, 0.7),
+			),
+			80: (
+				$md_shadow rgba(63, 81, 181, 0.8),
+			),
+			90: (
+				$md_shadow rgba(63, 81, 181, 0.9),
+			),
+			100: (
+				$md_shadow rgba(63, 81, 181, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(63, 81, 181, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(63, 81, 181, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(63, 81, 181, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(63, 81, 181, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(63, 81, 181, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(63, 81, 181, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(63, 81, 181, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(63, 81, 181, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(63, 81, 181, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(63, 81, 181, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(63, 81, 181, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(63, 81, 181, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(63, 81, 181, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(63, 81, 181, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(63, 81, 181, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(63, 81, 181, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(63, 81, 181, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(63, 81, 181, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(63, 81, 181, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(63, 81, 181, 1),
+			),
+		),
+	),
+	blue: (
+		xs: (
+			10: (
+				$xs_shadow rgba(34, 150, 242, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(34, 150, 242, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(34, 150, 242, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(34, 150, 242, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(34, 150, 242, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(34, 150, 242, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(34, 150, 242, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(34, 150, 242, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(34, 150, 242, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(34, 150, 242, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(34, 150, 242, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(34, 150, 242, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(34, 150, 242, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(34, 150, 242, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(34, 150, 242, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(34, 150, 242, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(34, 150, 242, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(34, 150, 242, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(34, 150, 242, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(34, 150, 242, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(34, 150, 242, 0.1),
+			),
+			20: (
+				$md_shadow rgba(34, 150, 242, 0.2),
+			),
+			30: (
+				$md_shadow rgba(34, 150, 242, 0.3),
+			),
+			40: (
+				$md_shadow rgba(34, 150, 242, 0.4),
+			),
+			50: (
+				$md_shadow rgba(34, 150, 242, 0.5),
+			),
+			60: (
+				$md_shadow rgba(34, 150, 242, 0.6),
+			),
+			70: (
+				$md_shadow rgba(34, 150, 242, 0.7),
+			),
+			80: (
+				$md_shadow rgba(34, 150, 242, 0.8),
+			),
+			90: (
+				$md_shadow rgba(34, 150, 242, 0.9),
+			),
+			100: (
+				$md_shadow rgba(34, 150, 242, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(34, 150, 242, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(34, 150, 242, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(34, 150, 242, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(34, 150, 242, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(34, 150, 242, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(34, 150, 242, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(34, 150, 242, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(34, 150, 242, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(34, 150, 242, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(34, 150, 242, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(34, 150, 242, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(34, 150, 242, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(34, 150, 242, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(34, 150, 242, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(34, 150, 242, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(34, 150, 242, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(34, 150, 242, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(34, 150, 242, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(34, 150, 242, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(34, 150, 242, 1),
+			),
+		),
+	),
+	light_blue: (
+		xs: (
+			10: (
+				$xs_shadow rgba(3, 169, 244, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(3, 169, 244, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(3, 169, 244, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(3, 169, 244, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(3, 169, 244, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(3, 169, 244, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(3, 169, 244, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(3, 169, 244, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(3, 169, 244, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(3, 169, 244, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(3, 169, 244, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(3, 169, 244, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(3, 169, 244, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(3, 169, 244, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(3, 169, 244, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(3, 169, 244, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(3, 169, 244, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(3, 169, 244, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(3, 169, 244, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(3, 169, 244, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(3, 169, 244, 0.1),
+			),
+			20: (
+				$md_shadow rgba(3, 169, 244, 0.2),
+			),
+			30: (
+				$md_shadow rgba(3, 169, 244, 0.3),
+			),
+			40: (
+				$md_shadow rgba(3, 169, 244, 0.4),
+			),
+			50: (
+				$md_shadow rgba(3, 169, 244, 0.5),
+			),
+			60: (
+				$md_shadow rgba(3, 169, 244, 0.6),
+			),
+			70: (
+				$md_shadow rgba(3, 169, 244, 0.7),
+			),
+			80: (
+				$md_shadow rgba(3, 169, 244, 0.8),
+			),
+			90: (
+				$md_shadow rgba(3, 169, 244, 0.9),
+			),
+			100: (
+				$md_shadow rgba(3, 169, 244, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(3, 169, 244, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(3, 169, 244, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(3, 169, 244, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(3, 169, 244, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(3, 169, 244, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(3, 169, 244, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(3, 169, 244, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(3, 169, 244, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(3, 169, 244, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(3, 169, 244, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(3, 169, 244, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(3, 169, 244, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(3, 169, 244, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(3, 169, 244, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(3, 169, 244, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(3, 169, 244, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(3, 169, 244, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(3, 169, 244, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(3, 169, 244, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(3, 169, 244, 1),
+			),
+		),
+	),
+	cyan: (
+		xs: (
+			10: (
+				$xs_shadow rgba(38, 198, 218, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(38, 198, 218, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(38, 198, 218, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(38, 198, 218, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(38, 198, 218, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(38, 198, 218, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(38, 198, 218, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(38, 198, 218, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(38, 198, 218, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(38, 198, 218, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(38, 198, 218, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(38, 198, 218, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(38, 198, 218, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(38, 198, 218, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(38, 198, 218, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(38, 198, 218, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(38, 198, 218, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(38, 198, 218, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(38, 198, 218, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(38, 198, 218, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(38, 198, 218, 0.1),
+			),
+			20: (
+				$md_shadow rgba(38, 198, 218, 0.2),
+			),
+			30: (
+				$md_shadow rgba(38, 198, 218, 0.3),
+			),
+			40: (
+				$md_shadow rgba(38, 198, 218, 0.4),
+			),
+			50: (
+				$md_shadow rgba(38, 198, 218, 0.5),
+			),
+			60: (
+				$md_shadow rgba(38, 198, 218, 0.6),
+			),
+			70: (
+				$md_shadow rgba(38, 198, 218, 0.7),
+			),
+			80: (
+				$md_shadow rgba(38, 198, 218, 0.8),
+			),
+			90: (
+				$md_shadow rgba(38, 198, 218, 0.9),
+			),
+			100: (
+				$md_shadow rgba(38, 198, 218, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(38, 198, 218, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(38, 198, 218, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(38, 198, 218, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(38, 198, 218, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(38, 198, 218, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(38, 198, 218, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(38, 198, 218, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(38, 198, 218, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(38, 198, 218, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(38, 198, 218, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(38, 198, 218, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(38, 198, 218, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(38, 198, 218, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(38, 198, 218, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(38, 198, 218, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(38, 198, 218, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(38, 198, 218, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(38, 198, 218, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(38, 198, 218, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(38, 198, 218, 1),
+			),
+		),
+	),
+	teal: (
+		xs: (
+			10: (
+				$xs_shadow rgba(77, 182, 172, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(77, 182, 172, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(77, 182, 172, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(77, 182, 172, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(77, 182, 172, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(77, 182, 172, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(77, 182, 172, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(77, 182, 172, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(77, 182, 172, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(77, 182, 172, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(77, 182, 172, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(77, 182, 172, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(77, 182, 172, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(77, 182, 172, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(77, 182, 172, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(77, 182, 172, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(77, 182, 172, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(77, 182, 172, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(77, 182, 172, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(77, 182, 172, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(77, 182, 172, 0.1),
+			),
+			20: (
+				$md_shadow rgba(77, 182, 172, 0.2),
+			),
+			30: (
+				$md_shadow rgba(77, 182, 172, 0.3),
+			),
+			40: (
+				$md_shadow rgba(77, 182, 172, 0.4),
+			),
+			50: (
+				$md_shadow rgba(77, 182, 172, 0.5),
+			),
+			60: (
+				$md_shadow rgba(77, 182, 172, 0.6),
+			),
+			70: (
+				$md_shadow rgba(77, 182, 172, 0.7),
+			),
+			80: (
+				$md_shadow rgba(77, 182, 172, 0.8),
+			),
+			90: (
+				$md_shadow rgba(77, 182, 172, 0.9),
+			),
+			100: (
+				$md_shadow rgba(77, 182, 172, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(77, 182, 172, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(77, 182, 172, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(77, 182, 172, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(77, 182, 172, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(77, 182, 172, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(77, 182, 172, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(77, 182, 172, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(77, 182, 172, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(77, 182, 172, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(77, 182, 172, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(77, 182, 172, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(77, 182, 172, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(77, 182, 172, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(77, 182, 172, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(77, 182, 172, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(77, 182, 172, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(77, 182, 172, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(77, 182, 172, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(77, 182, 172, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(77, 182, 172, 1),
+			),
+		),
+	),
+	green: (
+		xs: (
+			10: (
+				$xs_shadow rgba(76, 175, 80, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(76, 175, 80, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(76, 175, 80, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(76, 175, 80, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(76, 175, 80, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(76, 175, 80, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(76, 175, 80, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(76, 175, 80, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(76, 175, 80, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(76, 175, 80, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(76, 175, 80, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(76, 175, 80, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(76, 175, 80, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(76, 175, 80, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(76, 175, 80, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(76, 175, 80, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(76, 175, 80, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(76, 175, 80, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(76, 175, 80, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(76, 175, 80, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(76, 175, 80, 0.1),
+			),
+			20: (
+				$md_shadow rgba(76, 175, 80, 0.2),
+			),
+			30: (
+				$md_shadow rgba(76, 175, 80, 0.3),
+			),
+			40: (
+				$md_shadow rgba(76, 175, 80, 0.4),
+			),
+			50: (
+				$md_shadow rgba(76, 175, 80, 0.5),
+			),
+			60: (
+				$md_shadow rgba(76, 175, 80, 0.6),
+			),
+			70: (
+				$md_shadow rgba(76, 175, 80, 0.7),
+			),
+			80: (
+				$md_shadow rgba(76, 175, 80, 0.8),
+			),
+			90: (
+				$md_shadow rgba(76, 175, 80, 0.9),
+			),
+			100: (
+				$md_shadow rgba(76, 175, 80, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(76, 175, 80, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(76, 175, 80, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(76, 175, 80, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(76, 175, 80, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(76, 175, 80, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(76, 175, 80, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(76, 175, 80, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(76, 175, 80, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(76, 175, 80, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(76, 175, 80, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(76, 175, 80, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(76, 175, 80, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(76, 175, 80, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(76, 175, 80, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(76, 175, 80, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(76, 175, 80, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(76, 175, 80, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(76, 175, 80, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(76, 175, 80, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(76, 175, 80, 1),
+			),
+		),
+	),
+	light_green: (
+		xs: (
+			10: (
+				$xs_shadow rgba(156, 204, 101, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(156, 204, 101, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(156, 204, 101, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(156, 204, 101, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(156, 204, 101, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(156, 204, 101, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(156, 204, 101, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(156, 204, 101, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(156, 204, 101, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(156, 204, 101, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(156, 204, 101, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(156, 204, 101, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(156, 204, 101, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(156, 204, 101, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(156, 204, 101, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(156, 204, 101, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(156, 204, 101, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(156, 204, 101, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(156, 204, 101, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(156, 204, 101, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(156, 204, 101, 0.1),
+			),
+			20: (
+				$md_shadow rgba(156, 204, 101, 0.2),
+			),
+			30: (
+				$md_shadow rgba(156, 204, 101, 0.3),
+			),
+			40: (
+				$md_shadow rgba(156, 204, 101, 0.4),
+			),
+			50: (
+				$md_shadow rgba(156, 204, 101, 0.5),
+			),
+			60: (
+				$md_shadow rgba(156, 204, 101, 0.6),
+			),
+			70: (
+				$md_shadow rgba(156, 204, 101, 0.7),
+			),
+			80: (
+				$md_shadow rgba(156, 204, 101, 0.8),
+			),
+			90: (
+				$md_shadow rgba(156, 204, 101, 0.9),
+			),
+			100: (
+				$md_shadow rgba(156, 204, 101, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(156, 204, 101, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(156, 204, 101, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(156, 204, 101, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(156, 204, 101, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(156, 204, 101, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(156, 204, 101, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(156, 204, 101, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(156, 204, 101, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(156, 204, 101, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(156, 204, 101, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(156, 204, 101, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(156, 204, 101, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(156, 204, 101, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(156, 204, 101, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(156, 204, 101, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(156, 204, 101, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(156, 204, 101, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(156, 204, 101, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(156, 204, 101, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(156, 204, 101, 1),
+			),
+		),
+	),
+	lime: (
+		xs: (
+			10: (
+				$xs_shadow rgba(212, 225, 87, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(212, 225, 87, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(212, 225, 87, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(212, 225, 87, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(212, 225, 87, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(212, 225, 87, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(212, 225, 87, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(212, 225, 87, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(212, 225, 87, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(212, 225, 87, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(212, 225, 87, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(212, 225, 87, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(212, 225, 87, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(212, 225, 87, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(212, 225, 87, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(212, 225, 87, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(212, 225, 87, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(212, 225, 87, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(212, 225, 87, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(212, 225, 87, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(212, 225, 87, 0.1),
+			),
+			20: (
+				$md_shadow rgba(212, 225, 87, 0.2),
+			),
+			30: (
+				$md_shadow rgba(212, 225, 87, 0.3),
+			),
+			40: (
+				$md_shadow rgba(212, 225, 87, 0.4),
+			),
+			50: (
+				$md_shadow rgba(212, 225, 87, 0.5),
+			),
+			60: (
+				$md_shadow rgba(212, 225, 87, 0.6),
+			),
+			70: (
+				$md_shadow rgba(212, 225, 87, 0.7),
+			),
+			80: (
+				$md_shadow rgba(212, 225, 87, 0.8),
+			),
+			90: (
+				$md_shadow rgba(212, 225, 87, 0.9),
+			),
+			100: (
+				$md_shadow rgba(212, 225, 87, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(212, 225, 87, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(212, 225, 87, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(212, 225, 87, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(212, 225, 87, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(212, 225, 87, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(212, 225, 87, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(212, 225, 87, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(212, 225, 87, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(212, 225, 87, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(212, 225, 87, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(212, 225, 87, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(212, 225, 87, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(212, 225, 87, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(212, 225, 87, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(212, 225, 87, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(212, 225, 87, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(212, 225, 87, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(212, 225, 87, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(212, 225, 87, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(212, 225, 87, 1),
+			),
+		),
+	),
+	yellow: (
+		xs: (
+			10: (
+				$xs_shadow rgba(253, 216, 53, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(253, 216, 53, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(253, 216, 53, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(253, 216, 53, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(253, 216, 53, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(253, 216, 53, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(253, 216, 53, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(253, 216, 53, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(253, 216, 53, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(253, 216, 53, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(253, 216, 53, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(253, 216, 53, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(253, 216, 53, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(253, 216, 53, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(253, 216, 53, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(253, 216, 53, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(253, 216, 53, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(253, 216, 53, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(253, 216, 53, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(253, 216, 53, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(253, 216, 53, 0.1),
+			),
+			20: (
+				$md_shadow rgba(253, 216, 53, 0.2),
+			),
+			30: (
+				$md_shadow rgba(253, 216, 53, 0.3),
+			),
+			40: (
+				$md_shadow rgba(253, 216, 53, 0.4),
+			),
+			50: (
+				$md_shadow rgba(253, 216, 53, 0.5),
+			),
+			60: (
+				$md_shadow rgba(253, 216, 53, 0.6),
+			),
+			70: (
+				$md_shadow rgba(253, 216, 53, 0.7),
+			),
+			80: (
+				$md_shadow rgba(253, 216, 53, 0.8),
+			),
+			90: (
+				$md_shadow rgba(253, 216, 53, 0.9),
+			),
+			100: (
+				$md_shadow rgba(253, 216, 53, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(253, 216, 53, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(253, 216, 53, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(253, 216, 53, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(253, 216, 53, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(253, 216, 53, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(253, 216, 53, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(253, 216, 53, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(253, 216, 53, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(253, 216, 53, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(253, 216, 53, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(253, 216, 53, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(253, 216, 53, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(253, 216, 53, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(253, 216, 53, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(253, 216, 53, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(253, 216, 53, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(253, 216, 53, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(253, 216, 53, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(253, 216, 53, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(253, 216, 53, 1),
+			),
+		),
+	),
+	amber: (
+		xs: (
+			10: (
+				$xs_shadow rgba(255, 193, 7, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(255, 193, 7, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(255, 193, 7, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(255, 193, 7, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(255, 193, 7, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(255, 193, 7, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(255, 193, 7, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(255, 193, 7, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(255, 193, 7, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(255, 193, 7, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(255, 193, 7, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(255, 193, 7, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(255, 193, 7, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(255, 193, 7, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(255, 193, 7, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(255, 193, 7, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(255, 193, 7, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(255, 193, 7, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(255, 193, 7, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(255, 193, 7, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(255, 193, 7, 0.1),
+			),
+			20: (
+				$md_shadow rgba(255, 193, 7, 0.2),
+			),
+			30: (
+				$md_shadow rgba(255, 193, 7, 0.3),
+			),
+			40: (
+				$md_shadow rgba(255, 193, 7, 0.4),
+			),
+			50: (
+				$md_shadow rgba(255, 193, 7, 0.5),
+			),
+			60: (
+				$md_shadow rgba(255, 193, 7, 0.6),
+			),
+			70: (
+				$md_shadow rgba(255, 193, 7, 0.7),
+			),
+			80: (
+				$md_shadow rgba(255, 193, 7, 0.8),
+			),
+			90: (
+				$md_shadow rgba(255, 193, 7, 0.9),
+			),
+			100: (
+				$md_shadow rgba(255, 193, 7, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(255, 193, 7, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(255, 193, 7, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(255, 193, 7, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(255, 193, 7, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(255, 193, 7, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(255, 193, 7, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(255, 193, 7, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(255, 193, 7, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(255, 193, 7, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(255, 193, 7, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(255, 193, 7, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(255, 193, 7, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(255, 193, 7, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(255, 193, 7, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(255, 193, 7, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(255, 193, 7, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(255, 193, 7, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(255, 193, 7, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(255, 193, 7, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(255, 193, 7, 1),
+			),
+		),
+	),
+	orange: (
+		xs: (
+			10: (
+				$xs_shadow rgba(255, 167, 38, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(255, 167, 38, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(255, 167, 38, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(255, 167, 38, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(255, 167, 38, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(255, 167, 38, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(255, 167, 38, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(255, 167, 38, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(255, 167, 38, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(255, 167, 38, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(255, 167, 38, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(255, 167, 38, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(255, 167, 38, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(255, 167, 38, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(255, 167, 38, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(255, 167, 38, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(255, 167, 38, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(255, 167, 38, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(255, 167, 38, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(255, 167, 38, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(255, 167, 38, 0.1),
+			),
+			20: (
+				$md_shadow rgba(255, 167, 38, 0.2),
+			),
+			30: (
+				$md_shadow rgba(255, 167, 38, 0.3),
+			),
+			40: (
+				$md_shadow rgba(255, 167, 38, 0.4),
+			),
+			50: (
+				$md_shadow rgba(255, 167, 38, 0.5),
+			),
+			60: (
+				$md_shadow rgba(255, 167, 38, 0.6),
+			),
+			70: (
+				$md_shadow rgba(255, 167, 38, 0.7),
+			),
+			80: (
+				$md_shadow rgba(255, 167, 38, 0.8),
+			),
+			90: (
+				$md_shadow rgba(255, 167, 38, 0.9),
+			),
+			100: (
+				$md_shadow rgba(255, 167, 38, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(255, 167, 38, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(255, 167, 38, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(255, 167, 38, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(255, 167, 38, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(255, 167, 38, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(255, 167, 38, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(255, 167, 38, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(255, 167, 38, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(255, 167, 38, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(255, 167, 38, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(255, 167, 38, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(255, 167, 38, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(255, 167, 38, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(255, 167, 38, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(255, 167, 38, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(255, 167, 38, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(255, 167, 38, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(255, 167, 38, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(255, 167, 38, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(255, 167, 38, 1),
+			),
+		),
+	),
+	deep_orange: (
+		xs: (
+			10: (
+				$xs_shadow rgba(255, 87, 34, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(255, 87, 34, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(255, 87, 34, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(255, 87, 34, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(255, 87, 34, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(255, 87, 34, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(255, 87, 34, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(255, 87, 34, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(255, 87, 34, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(255, 87, 34, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(255, 87, 34, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(255, 87, 34, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(255, 87, 34, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(255, 87, 34, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(255, 87, 34, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(255, 87, 34, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(255, 87, 34, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(255, 87, 34, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(255, 87, 34, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(255, 87, 34, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(255, 87, 34, 0.1),
+			),
+			20: (
+				$md_shadow rgba(255, 87, 34, 0.2),
+			),
+			30: (
+				$md_shadow rgba(255, 87, 34, 0.3),
+			),
+			40: (
+				$md_shadow rgba(255, 87, 34, 0.4),
+			),
+			50: (
+				$md_shadow rgba(255, 87, 34, 0.5),
+			),
+			60: (
+				$md_shadow rgba(255, 87, 34, 0.6),
+			),
+			70: (
+				$md_shadow rgba(255, 87, 34, 0.7),
+			),
+			80: (
+				$md_shadow rgba(255, 87, 34, 0.8),
+			),
+			90: (
+				$md_shadow rgba(255, 87, 34, 0.9),
+			),
+			100: (
+				$md_shadow rgba(255, 87, 34, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(255, 87, 34, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(255, 87, 34, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(255, 87, 34, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(255, 87, 34, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(255, 87, 34, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(255, 87, 34, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(255, 87, 34, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(255, 87, 34, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(255, 87, 34, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(255, 87, 34, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(255, 87, 34, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(255, 87, 34, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(255, 87, 34, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(255, 87, 34, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(255, 87, 34, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(255, 87, 34, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(255, 87, 34, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(255, 87, 34, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(255, 87, 34, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(255, 87, 34, 1),
+			),
+		),
+	),
+	brown: (
+		xs: (
+			10: (
+				$xs_shadow rgba(109, 76, 65, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(109, 76, 65, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(109, 76, 65, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(109, 76, 65, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(109, 76, 65, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(109, 76, 65, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(109, 76, 65, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(109, 76, 65, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(109, 76, 65, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(109, 76, 65, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(109, 76, 65, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(109, 76, 65, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(109, 76, 65, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(109, 76, 65, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(109, 76, 65, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(109, 76, 65, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(109, 76, 65, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(109, 76, 65, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(109, 76, 65, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(109, 76, 65, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(109, 76, 65, 0.1),
+			),
+			20: (
+				$md_shadow rgba(109, 76, 65, 0.2),
+			),
+			30: (
+				$md_shadow rgba(109, 76, 65, 0.3),
+			),
+			40: (
+				$md_shadow rgba(109, 76, 65, 0.4),
+			),
+			50: (
+				$md_shadow rgba(109, 76, 65, 0.5),
+			),
+			60: (
+				$md_shadow rgba(109, 76, 65, 0.6),
+			),
+			70: (
+				$md_shadow rgba(109, 76, 65, 0.7),
+			),
+			80: (
+				$md_shadow rgba(109, 76, 65, 0.8),
+			),
+			90: (
+				$md_shadow rgba(109, 76, 65, 0.9),
+			),
+			100: (
+				$md_shadow rgba(109, 76, 65, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(109, 76, 65, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(109, 76, 65, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(109, 76, 65, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(109, 76, 65, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(109, 76, 65, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(109, 76, 65, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(109, 76, 65, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(109, 76, 65, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(109, 76, 65, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(109, 76, 65, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(109, 76, 65, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(109, 76, 65, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(109, 76, 65, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(109, 76, 65, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(109, 76, 65, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(109, 76, 65, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(109, 76, 65, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(109, 76, 65, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(109, 76, 65, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(109, 76, 65, 1),
+			),
+		),
+	),
+	grey: (
+		xs: (
+			10: (
+				$xs_shadow rgba(117, 117, 117, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(117, 117, 117, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(117, 117, 117, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(117, 117, 117, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(117, 117, 117, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(117, 117, 117, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(117, 117, 117, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(117, 117, 117, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(117, 117, 117, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(117, 117, 117, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(117, 117, 117, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(117, 117, 117, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(117, 117, 117, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(117, 117, 117, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(117, 117, 117, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(117, 117, 117, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(117, 117, 117, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(117, 117, 117, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(117, 117, 117, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(117, 117, 117, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(117, 117, 117, 0.1),
+			),
+			20: (
+				$md_shadow rgba(117, 117, 117, 0.2),
+			),
+			30: (
+				$md_shadow rgba(117, 117, 117, 0.3),
+			),
+			40: (
+				$md_shadow rgba(117, 117, 117, 0.4),
+			),
+			50: (
+				$md_shadow rgba(117, 117, 117, 0.5),
+			),
+			60: (
+				$md_shadow rgba(117, 117, 117, 0.6),
+			),
+			70: (
+				$md_shadow rgba(117, 117, 117, 0.7),
+			),
+			80: (
+				$md_shadow rgba(117, 117, 117, 0.8),
+			),
+			90: (
+				$md_shadow rgba(117, 117, 117, 0.9),
+			),
+			100: (
+				$md_shadow rgba(117, 117, 117, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(117, 117, 117, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(117, 117, 117, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(117, 117, 117, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(117, 117, 117, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(117, 117, 117, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(117, 117, 117, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(117, 117, 117, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(117, 117, 117, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(117, 117, 117, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(117, 117, 117, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(117, 117, 117, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(117, 117, 117, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(117, 117, 117, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(117, 117, 117, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(117, 117, 117, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(117, 117, 117, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(117, 117, 117, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(117, 117, 117, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(117, 117, 117, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(117, 117, 117, 1),
+			),
+		),
+	),
+	blue_grey: (
+		xs: (
+			10: (
+				$xs_shadow rgba(96, 125, 139, 0.1),
+			),
+			20: (
+				$xs_shadow rgba(96, 125, 139, 0.2),
+			),
+			30: (
+				$xs_shadow rgba(96, 125, 139, 0.3),
+			),
+			40: (
+				$xs_shadow rgba(96, 125, 139, 0.4),
+			),
+			50: (
+				$xs_shadow rgba(96, 125, 139, 0.5),
+			),
+			60: (
+				$xs_shadow rgba(96, 125, 139, 0.6),
+			),
+			70: (
+				$xs_shadow rgba(96, 125, 139, 0.7),
+			),
+			80: (
+				$xs_shadow rgba(96, 125, 139, 0.8),
+			),
+			90: (
+				$xs_shadow rgba(96, 125, 139, 0.9),
+			),
+			100: (
+				$xs_shadow rgba(96, 125, 139, 1),
+			),
+		),
+		sm: (
+			10: (
+				$sm_shadow rgba(96, 125, 139, 0.1),
+			),
+			20: (
+				$sm_shadow rgba(96, 125, 139, 0.2),
+			),
+			30: (
+				$sm_shadow rgba(96, 125, 139, 0.3),
+			),
+			40: (
+				$sm_shadow rgba(96, 125, 139, 0.4),
+			),
+			50: (
+				$sm_shadow rgba(96, 125, 139, 0.5),
+			),
+			60: (
+				$sm_shadow rgba(96, 125, 139, 0.6),
+			),
+			70: (
+				$sm_shadow rgba(96, 125, 139, 0.7),
+			),
+			80: (
+				$sm_shadow rgba(96, 125, 139, 0.8),
+			),
+			90: (
+				$sm_shadow rgba(96, 125, 139, 0.9),
+			),
+			100: (
+				$sm_shadow rgba(96, 125, 139, 1),
+			),
+		),
+		md: (
+			10: (
+				$md_shadow rgba(96, 125, 139, 0.1),
+			),
+			20: (
+				$md_shadow rgba(96, 125, 139, 0.2),
+			),
+			30: (
+				$md_shadow rgba(96, 125, 139, 0.3),
+			),
+			40: (
+				$md_shadow rgba(96, 125, 139, 0.4),
+			),
+			50: (
+				$md_shadow rgba(96, 125, 139, 0.5),
+			),
+			60: (
+				$md_shadow rgba(96, 125, 139, 0.6),
+			),
+			70: (
+				$md_shadow rgba(96, 125, 139, 0.7),
+			),
+			80: (
+				$md_shadow rgba(96, 125, 139, 0.8),
+			),
+			90: (
+				$md_shadow rgba(96, 125, 139, 0.9),
+			),
+			100: (
+				$md_shadow rgba(96, 125, 139, 1),
+			),
+		),
+		lg: (
+			10: (
+				$lg_shadow rgba(96, 125, 139, 0.1),
+			),
+			20: (
+				$lg_shadow rgba(96, 125, 139, 0.2),
+			),
+			30: (
+				$lg_shadow rgba(96, 125, 139, 0.3),
+			),
+			40: (
+				$lg_shadow rgba(96, 125, 139, 0.4),
+			),
+			50: (
+				$lg_shadow rgba(96, 125, 139, 0.5),
+			),
+			60: (
+				$lg_shadow rgba(96, 125, 139, 0.6),
+			),
+			70: (
+				$lg_shadow rgba(96, 125, 139, 0.7),
+			),
+			80: (
+				$lg_shadow rgba(96, 125, 139, 0.8),
+			),
+			90: (
+				$lg_shadow rgba(96, 125, 139, 0.9),
+			),
+			100: (
+				$lg_shadow rgba(96, 125, 139, 1),
+			),
+		),
+		xl: (
+			10: (
+				$xl_shadow rgba(96, 125, 139, 0.1),
+			),
+			20: (
+				$xl_shadow rgba(96, 125, 139, 0.2),
+			),
+			30: (
+				$xl_shadow rgba(96, 125, 139, 0.3),
+			),
+			40: (
+				$xl_shadow rgba(96, 125, 139, 0.4),
+			),
+			50: (
+				$xl_shadow rgba(96, 125, 139, 0.5),
+			),
+			60: (
+				$xl_shadow rgba(96, 125, 139, 0.6),
+			),
+			70: (
+				$xl_shadow rgba(96, 125, 139, 0.7),
+			),
+			80: (
+				$xl_shadow rgba(96, 125, 139, 0.8),
+			),
+			90: (
+				$xl_shadow rgba(96, 125, 139, 0.9),
+			),
+			100: (
+				$xl_shadow rgba(96, 125, 139, 1),
+			),
+		),
+	),
+);

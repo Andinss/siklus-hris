@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// This file contains breadcrumbs ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.nav-breadcrumb {
+	height: 48px;
+	display: flex;
+	gap: 16px;
+	> li {
+		position: relative;
+		display: flex;
+		align-items: center;
+		&::before {
+			content: '/';
+			position: absolute;
+			left: 0;
+			margin-left: -10px;
+			color: functions.std_val(std_color, neutral_lighter);
+		}
+		&:first-child {
+			&::before {
+				display: none;
+			}
+		}
+		> a,
+		> p {
+			padding: 2px 4px;
+			@include fonts.use_font(body_regular_md);
+			display: flex;
+			align-items: center;
+		}
+		> a {
+			color: functions.std_val(std_color, neutral_light);
+			&:hover {
+				color: functions.std_val(std_color, dark_75);
+			}
+		}
+		> p {
+			color: functions.std_val(std_color, primary_main);
+		}
+	}
+}

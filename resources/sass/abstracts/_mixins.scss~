@@ -1,0 +1,518 @@
+// -----------------------------------------------------------------------------
+// This file contains sass mixin configuration
+// -----------------------------------------------------------------------------
+
+// This mixin to generate font-size purposes cause rem unit is more stable than px
+// Example use: @include font(14px);
+// Example use if you want to used function: @include font(font_size(text, sm));
+@mixin font_size($size, $important: null) {
+	@if $important {
+		font-size: $size !important;
+		// font-size: calculateRem($size) !important;
+	} @else {
+		font-size: $size;
+		// font-size: calculateRem($size);
+	}
+}
+
+// This mixin to generate font-face settings purpose
+// Example use: @include font-face(RobotoRegular, fonts/Roboto-Regular, 400, normal, ttf);
+@mixin font-face(
+	$name,
+	$path,
+	$weight: null,
+	$style: null,
+	$exts: eot woff2 woff ttf svg
+) {
+	$src: null;
+	$extmods: (
+		eot: '?',
+		svg: '#' + str-replace($name, ' ', '_'),
+	);
+	$formats: (
+		otf: 'opentype',
+		ttf: 'truetype',
+	);
+	@each $ext in $exts {
+		$extmod: if(
+			map-has-key($extmods, $ext),
+			$ext + map-get($extmods, $ext),
+			$ext
+		);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append(
+			$src,
+			url(quote($path + '.' + $extmod)) format(quote($format)),
+			comma
+		);
+	}
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		font-display: swap;
+		src: $src;
+	}
+}
+
+// Configuration size of bootstrap grid range
+// Example use: @include set-grid(10px);
+@mixin set-grid($size) {
+	$breakpointStates: col, col-sm, col-md, col-lg, col-xl;
+
+	.row {
+		margin-left: -#{$size};
+		margin-right: -#{$size};
+	}
+
+	%padding-grid-settings {
+		padding-left: #{$size};
+		padding-right: #{$size};
+	}
+
+	@each $breakpoint in $breakpointStates {
+		@for $i from 1 through 12 {
+			.#{$breakpoint}-#{$i} {
+				@extend %padding-grid-settings;
+			}
+		}
+	}
+}
+
+// Example use : @include keyframes(ring) { ... }
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+// This mixins to generate animation delay and duration purpose
+// To set it up just used delay-100 to delay-3000 and duration-300 to duration-6000 on your elements with .animated included
+@mixin animated_delay {
+	$i: 100;
+	@while $i <=3000 {
+		.animated.delay-#{$i} {
+			@include animation-delay(#{$i}ms);
+		}
+		$i: $i + 100;
+	}
+}
+
+@mixin animated_duration {
+	$i: 300;
+	@while $i <=6000 {
+		.animated.duration-#{$i} {
+			@include animation-duration(#{$i}ms);
+		}
+		$i: $i + 100;
+	}
+}
+
+// This mixin to generate table cell width classes purpose
+// To set it up just used width-50 to width-500 on your <th>..</th> or <td>..</td> elements
+@mixin table_width {
+	$i: 50;
+	@while $i <=400 {
+		table .width-#{$i} {
+			width: #{$i}px !important;
+			max-width: #{$i}px !important;
+		}
+		$i: $i + 10;
+	}
+}
+
+// Example use: @include justify(center)
+@mixin justify($position: left right center) {
+	text-align: justify;
+	text-align-last: $position;
+}
+
+// Example use: @include flexboxes(flex, center, center)
+// @mixin flexboxes($displayType: flex inline-flex, $justifyPos: flex-start flex-end center space-between space around space evenly, $alignItems: flex-start flex-end center baseline stretch) {
+//     display: $displayType;
+//     @include justify-content($justifyPos);
+//     align-items: $alignItems;
+// }
+
+// Example use: @include scrollbars(5px, #f4f4f4, rgba(0,0,0,.6), rgba(0,0,0,.8));
+@mixin scrollbars(
+	$size,
+	$foregroundColor,
+	$backgroundColor,
+	$backgroundColorHover
+) {
+	// width
+	&::-webkit-scrollbar {
+		width: $size;
+		height: $size;
+	}
+
+	// Track
+	&::-webkit-scrollbar-track {
+		background: $foregroundColor;
+		border-radius: 50px;
+	}
+
+	// Handle
+	&::-webkit-scrollbar-thumb {
+		background: $backgroundColor;
+		border-radius: 50px;
+	}
+
+	// Handle on hover
+	&::-webkit-scrollbar-thumb:hover {
+		background: $backgroundColorHover;
+	}
+
+	// For Internet Explorer
+	& {
+		scrollbar-face-color: $foregroundColor;
+		scrollbar-track-color: $backgroundColor;
+	}
+}
+
+// Example use: @include cover-img(100px, $100px);
+@mixin cover-img($height, $width) {
+	height: $height;
+	width: $width;
+	object-fit: cover;
+}
+
+// Example use: @include placeholder_color(#eeeeee);
+@mixin placeholder_color($color) {
+	&::-webkit-input-placeholder {
+		/* Edge */
+		color: $color;
+	}
+
+	&:-ms-input-placeholder {
+		/* Internet Explorer */
+		color: $color;
+	}
+
+	&::placeholder {
+		color: $color;
+	}
+}
+
+// Example use: @include media(medium){ ... }
+@mixin media($breakpoint) {
+	@if ($breakpoint == xxl) {
+		@media (min-width: 1400px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == xl) {
+		@media (min-width: 1200px) and (max-width: 1399px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == lg) {
+		@media (min-width: 992px) and (max-width: 1199px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == md) {
+		@media (min-width: 768px) and (max-width: 991px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == sm) {
+		@media (min-width: 576px) and (max-width: 767px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == xs) {
+		@media (max-width: 575.98px) {
+			@content;
+		}
+	}
+}
+
+// Example use: @include media_min(medium){ ... }
+@mixin media_min($breakpoint) {
+	@if ($breakpoint == xxl) {
+		@media (min-width: 1400px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == xl) {
+		@media (min-width: 1200px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == lg) {
+		@media (min-width: 992px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == md) {
+		@media (min-width: 768px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == sm) {
+		@media (min-width: 576px) {
+			@content;
+		}
+	}
+}
+
+// Example use: @include media_max(medium){ ... }
+@mixin media_max($breakpoint) {
+	@if ($breakpoint == xxl) {
+		@media (max-width: 1399.98px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == xl) {
+		@media (max-width: 1199.98px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == lg) {
+		@media (max-width: 991.98px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == md) {
+		@media (max-width: 767.98px) {
+			@content;
+		}
+	}
+	@if ($breakpoint == sm) {
+		@media (max-width: 575.98px) {
+			@content;
+		}
+	}
+}
+
+@mixin tooltip-color-config($borderColor) {
+	$tooltipPosition: top, bottom, left, right;
+
+	@each $position in $tooltipPosition {
+		.bs-tooltip-#{$position} {
+			.arrow {
+				&::before {
+					border-#{$position}-color: $borderColor;
+				}
+			}
+		}
+		.bs-tooltip-auto {
+			&[x-placement^='#{$position}'] {
+				.arrow {
+					&::before {
+						border-#{$position}-color: $borderColor;
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin alert-color-config($states, $backgroundColor, $borderColor, $textColor) {
+	.alert {
+		&.alert-basic {
+			&.alert-#{$states} {
+				background-color: $backgroundColor;
+				border-color: $borderColor;
+				color: $textColor;
+			}
+		}
+		&.alert-carbon {
+			&.alert-#{$states} {
+				background-color: $backgroundColor;
+				border-color: $textColor;
+				color: $textColor;
+			}
+		}
+	}
+}
+
+@mixin badge-color-config($states, $background, $textColor) {
+	.badge-#{$states} {
+		background: $background !important;
+		color: $textColor !important;
+
+		@if ($states == 'link') {
+			display: block;
+			&:hover {
+				color: standard(default, primary_100);
+			}
+		}
+	}
+}
+
+@mixin buttons-color-config(
+	$states,
+	$backgroundColor,
+	$backgroundColorHover,
+	$borderColor,
+	$textColor,
+	$textColorOutline,
+	$shadowColor
+) {
+	.btn {
+		&.btn-#{$states} {
+			background: $backgroundColor !important;
+			border-color: $borderColor;
+			color: $textColor !important;
+			box-shadow: $shadowColor;
+			&:hover {
+				background: $backgroundColorHover !important;
+				border-color: $borderColor;
+				color: $textColor !important;
+			}
+			&:active {
+				box-shadow: 0px 0px 4px 1px inset rgba(96, 125, 139, 0.38) !important;
+				background: $backgroundColorHover !important;
+				border-color: $borderColor;
+				color: $textColor !important;
+			}
+		}
+		&.btn-outline-#{$states} {
+			border-color: $backgroundColor !important;
+			color: $textColorOutline !important;
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: transparent;
+				border-color: $backgroundColorHover !important;
+				color: $backgroundColorHover !important;
+			}
+			@if ($states == 'default') {
+				border-color: material(blue_grey, 200) !important;
+				color: material(blue_grey, 200) !important;
+				&:hover,
+				&:focus,
+				&:active {
+					background-color: transparent;
+					border-color: material(blue_grey, 400) !important;
+					color: material(blue_grey, 400) !important;
+				}
+			}
+		}
+	}
+	.btn-group {
+		&.btn-group-toggle {
+			> .btn {
+				&.btn-#{$states} {
+					background: $backgroundColor !important;
+					border-color: $borderColor;
+					color: $textColor;
+					box-shadow: $shadowColor;
+					&:hover {
+						background: $backgroundColorHover !important;
+						border-color: $borderColor;
+						color: $textColor;
+					}
+					&:active,
+					&.active {
+						box-shadow: 0px 0px 4px 1px inset rgba(96, 125, 139, 0.38) !important;
+						background: $backgroundColorHover !important;
+						border-color: $borderColor;
+						color: $textColor;
+					}
+				}
+				&.btn-outline-#{$states} {
+					border-color: $backgroundColor !important;
+					color: $textColorOutline !important;
+					&:hover,
+					&:focus,
+					&:active,
+					&.active {
+						border-color: $backgroundColorHover !important;
+						color: $textColorOutline !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin select2-color-config($textColor, $backgroundColor) {
+	.select2-container {
+		&--bootstrap {
+			.select2-dropdown {
+				.select2-results {
+					&__option {
+						&--highlighted[aria-selected] {
+							background-color: $backgroundColor;
+							color: $textColor;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// This mixin below for styling purpose, you just need to @include it to used it
+
+@mixin reset-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+@mixin text-ellipsis {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+@mixin cover-div-img {
+	background-position: center;
+	@include background-size(cover);
+}
+
+@mixin fixed-img {
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	@include background-size(cover);
+}
+
+@mixin fontawesome {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+	font-weight: 900;
+	font-family: 'Font Awesome 5 Free';
+	padding-right: 3px;
+	padding-left: 3px;
+}
+
+@mixin w-h-100 {
+	width: 100%;
+	height: 100%;
+}
+
+/* Example use: @include flexCenterX */
+@mixin flexCenterY {
+	display: flex;
+	align-items: center;
+}
+
+/* Example use: @include flexCenterY */
+@mixin flexCenterX {
+	display: flex;
+	justify-content: center;
+}
+
+/* Example use: @include flexCenter */
+@mixin flexCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

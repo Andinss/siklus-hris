@@ -1,0 +1,16 @@
+// -----------------------------------------------------------------------------
+// This file contains animation utilities rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.page-enter-active,
+.page-leave-active {
+	transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+	opacity: 0;
+}

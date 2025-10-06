@@ -1,0 +1,209 @@
+// -----------------------------------------------------------------------------
+// This file contains chat ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.chat {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.chat li {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px dotted rgba(120, 130, 140, 0.13);
+}
+.chat li.left .chat-body {
+	margin-left: 60px;
+}
+.chat li.right .chat-body {
+	margin-right: 60px;
+}
+.chat li .chat-body p {
+	margin: 0;
+}
+.chat-list {
+	list-style: none;
+	max-height: 332px;
+	padding: 0 20px;
+}
+.chat-list li {
+	margin-bottom: 24px;
+	overflow: auto;
+}
+.chat-list .chat-image {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	width: 50px;
+}
+.chat-list .chat-image img {
+	border-radius: 100%;
+	width: 100%;
+}
+.chat-list .chat-text {
+	background: #f7fafc;
+	border-radius: 2px;
+	display: inline-block;
+	padding: 15px;
+	position: relative;
+}
+.chat-list .chat-text h4 {
+	color: #1a2942;
+	display: block;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 700;
+	margin: 0;
+	line-height: 15px;
+	position: relative;
+}
+.chat-list .chat-text p {
+	margin: 0;
+	padding-top: 3px;
+}
+.chat-list .chat-text b {
+	font-size: 10px;
+	opacity: 0.8;
+}
+.chat-list .chat-body {
+	display: inline-block;
+	float: left;
+	font-size: 12px;
+	margin-left: 12px;
+	width: 65%;
+}
+.chat-list .odd .chat-image {
+	float: right !important;
+}
+.chat-list .odd .chat-body {
+	float: right !important;
+	margin-right: 12px;
+	text-align: right;
+	color: #fff;
+}
+.chat-list .odd .chat-text {
+	background: #ff6849;
+}
+.chat-list .odd .chat-text h4 {
+	color: #fff;
+}
+.chat-send {
+	padding-left: 0;
+	padding-right: 30px;
+}
+.chat-send button {
+	width: 100%;
+}
+.chatonline img {
+	margin-right: 10px;
+	float: left;
+	width: 30px;
+}
+.chatonline li a {
+	padding: 15px 0;
+	float: left;
+	width: 100%;
+}
+.chatonline li a span {
+	color: #686868;
+}
+.chatonline li a span small {
+	display: block;
+	font-size: 10px;
+}
+.chat-main-box {
+	position: relative;
+	background: #fff;
+	overflow: hidden;
+}
+.chat-main-box .chat-left-aside {
+	position: absolute;
+	width: 250px;
+	z-index: 9;
+	top: 0;
+	border-right: 1px solid rgba(120, 130, 140, 0.13);
+}
+.chat-main-box .chat-left-aside .open-panel {
+	display: none;
+	cursor: pointer;
+	position: absolute;
+	left: -webkit-calc(99%);
+	top: 50%;
+	z-index: 100;
+	background-color: #fff;
+	-webkit-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 0 3px rgba(0, 0, 0, 0.2);
+	border-radius: 0 100px 100px 0;
+	line-height: 1;
+	padding: 15px 8px 15px 4px;
+}
+.chat-main-box .chat-left-aside .chat-left-inner .form-control {
+	height: 60px;
+}
+.chat-main-box .chat-left-aside .chat-left-inner .style-none {
+	padding: 0;
+}
+.chat-main-box .chat-left-aside .chat-left-inner .style-none li {
+	list-style: none;
+	overflow: hidden;
+}
+.chat-main-box .chat-left-aside .chat-left-inner .style-none li a {
+	padding: 20px;
+}
+.chat-main-box .chat-left-aside .chat-left-inner .style-none li a.active,
+.chat-main-box .chat-left-aside .chat-left-inner .style-none li a:hover {
+	background: #f7fafc;
+}
+.chat-main-box .chat-right-aside {
+	margin-left: 250px;
+}
+.chat-main-box .chat-right-aside .chat-list {
+	max-height: none;
+	height: 100%;
+	padding-top: 40px;
+}
+.chat-main-box .chat-right-aside .chat-list .chat-text {
+	border-radius: 6px;
+}
+.chat-main-box .chat-right-aside .send-chat-box {
+	position: relative;
+}
+.chat-main-box .chat-right-aside .send-chat-box .form-control {
+	border: none;
+	border-top: 1px solid rgba(120, 130, 140, 0.13);
+	resize: none;
+	height: 80px;
+	padding-right: 180px;
+}
+.chat-main-box .chat-right-aside .send-chat-box .form-control:focus {
+	border-color: rgba(120, 130, 140, 0.13);
+}
+.chat-main-box .chat-right-aside .send-chat-box .custom-send {
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+}
+.chat-main-box .chat-right-aside .send-chat-box .custom-send .cst-icon {
+	color: #686868;
+	margin-right: 10px;
+}
+@include mixins.breakpoint_min(md) {
+	.chat-main-box .chat-left-aside {
+		left: -250px;
+		transition: 0.5s ease-in;
+		background: #fff;
+	}
+	.chat-main-box .chat-left-aside.open-pnl {
+		left: 0;
+	}
+	.chat-main-box .chat-left-aside .open-panel {
+		display: block;
+	}
+	.chat-main-box .chat-right-aside {
+		margin: 0;
+	}
+}

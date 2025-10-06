@@ -1,0 +1,54 @@
+// -----------------------------------------------------------------------------
+// This file contains sass function configuration
+// -----------------------------------------------------------------------------
+
+@use "sass:map";
+@use "sass:list";
+@use "sass:meta";
+@use "sass:string";
+@use './theme_variables' as *;
+
+// This function mapping from `$standard` variables in `_theme_palettes.scss`
+// Example use : functions.std_val(default, primary);
+@function std_val($categorize, $index) {
+
+    @if map.has-key($standard, $categorize) {
+        $categorize: map.get($standard, $categorize);
+
+        @if map.has-key($categorize, $index) {
+            $index: map.get($categorize, $index);
+
+            @return $index;
+        }
+
+        @warn "unknown index `#{$index}` in theme variable";
+        @return null;
+    }
+
+    @warn "unknown categorize `#{$categorize}` in theme variable";
+    @return null;
+
+}
+
+// Calculate font size into rem unit
+// Example use : calculateRem(14px);
+@function calculateRem($size) {
+
+    $remSize: $size / 1px / 16;
+    @return #{$remSize}rem;
+
+}
+
+// This function is to explode the character & implode with another character in string
+// Example use : str-replace("Test Text", " ", "_");
+@function str-replace($string, $character, $replace: "") {
+
+    $index: str-index($string, $character);
+    @if $index {
+
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($character)), $character, $replace);
+        
+    }
+    @return $string;
+
+}

@@ -1,0 +1,132 @@
+// -----------------------------------------------------------------------------
+// This file contains typography configuration get from https://fonts.google.com/
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+
+body {
+	&.font-default {
+		// Defined your font-family name from google font
+		$fontName: 'Inter';
+
+		// This setup to create typography classes to used on your html tag
+		// Example of use : class="text-bold", class="text-light-italic" or class="text-regular"
+		$fontType:
+			('light', sans-serif, 300, 0), ('light-italic', sans-serif, 300, 1), ('regular', sans-serif, 400, 0), ('regular-italic', sans-serif, 400, 1), ('semi-bold', sans-serif, 600, 0), ('semi-bold-italic', sans-serif, 600, 1),
+			('bold', sans-serif, 700, 0), ('bold-italic', sans-serif, 700, 1), ('black', sans-serif, 900, 0), ('black-italic', sans-serif, 900, 1);
+
+		@each $class, $family, $weight, $italic in $fontType {
+			.text-#{$class} {
+				font-family: $fontName, $family;
+				font-weight: $weight;
+				@if ($italic == 1) {
+					font-style: italic;
+				}
+			}
+		}
+	}
+	&.font-inter {
+		// Defined your font-family name from google font
+		$fontName: 'Source Sans Pro';
+
+		// This setup to create typography classes to used on your html tag
+		// Example of use : class="text-bold", class="text-light-italic" or class="text-regular"
+		$fontType:
+			('light', sans-serif, 300, 0), ('light-italic', sans-serif, 300, 1), ('regular', sans-serif, 400, 0), ('regular-italic', sans-serif, 400, 1), ('semi-bold', sans-serif, 500, 0), ('semi-bold-italic', sans-serif, 500, 1),
+			('bold', sans-serif, 700, 0), ('bold-italic', sans-serif, 700, 1), ('black', sans-serif, 900, 0), ('black-italic', sans-serif, 900, 1);
+
+		@each $class, $family, $weight, $italic in $fontType {
+			.text-#{$class} {
+				font-family: $fontName, $family;
+				font-weight: $weight;
+				@if ($italic == 1) {
+					font-style: italic;
+				}
+			}
+		}
+	}
+}
+
+// This mixin to used (@include) on you css file
+// Example of use : @include font-type(Regular);
+@mixin font-type($type) {
+	@if ($type == 'light') {
+		@extend .text-light;
+	}
+	@if ($type == 'light-italic') {
+		@extend .text-light-italic;
+	}
+	@if ($type == 'regular') {
+		@extend .text-regular;
+	}
+	@if ($type == 'regular-italic') {
+		@extend .text-regular-italic;
+	}
+	@if ($type == 'semi-bold') {
+		@extend .text-semi-bold;
+	}
+	@if ($type == 'semi-bold-italic') {
+		@extend .text-semi-bold-italic;
+	}
+	@if ($type == 'bold') {
+		@extend .text-bold;
+	}
+	@if ($type == 'bold-italic') {
+		@extend .text-bold-italic;
+	}
+	@if ($type == 'black') {
+		@extend .text-black;
+	}
+	@if ($type == 'black-italic') {
+		@extend .text-black-italic;
+	}
+}
+
+// This mixin to used font base on categorize on code
+// Example of use : @include fonts.use_font(body_medium_md);
+@mixin use_font($categorize) {
+	$fontNameCategorize: 'display', 'headline', 'title', 'label', 'body';
+	$fontWeightCategorize: ('light', 300), ('regular', 400), ('medium', 500), ('bold', 700), ('black', 900);
+	$fontSizeCategorize: 'sm', 'md', 'lg';
+
+	// Loop categorize
+	@each $nameCtg in $fontNameCategorize {
+		@each $weightCtg, $weightIndex in $fontWeightCategorize {
+			@each $sizeCtg in $fontSizeCategorize {
+				// Mapping index
+				@if ($categorize == $nameCtg + '_' + $weightCtg + '_' + $sizeCtg) {
+					$newWeightSizeCtg: $nameCtg + '_' + $sizeCtg;
+
+					font-size: functions.std_val(font_size, $newWeightSizeCtg);
+					line-height: functions.std_val(font_height, $newWeightSizeCtg);
+					letter-spacing: functions.std_val(font_spacing, $newWeightSizeCtg);
+					font-family: 'Inter', sans-serif;
+					font-weight: $weightIndex;
+				}
+			}
+		}
+	}
+}
+
+$fontNameCategorize: 'display', 'headline', 'title', 'body';
+$fontWeightCategorize: ('light', 300), ('regular', 400), ('medium', 500), ('bold', 700), ('black', 900);
+$fontSizeCategorize: 'sm', 'md', 'lg';
+
+// Loop categorize
+@each $nameCtg in $fontNameCategorize {
+	@each $weightCtg, $weightIndex in $fontWeightCategorize {
+		@each $sizeCtg in $fontSizeCategorize {
+			// Mapping index
+			$newWeightSizeCtg: $nameCtg + '_' + $sizeCtg;
+
+			.txt-#{$nameCtg}-#{$weightCtg}-#{$sizeCtg} {
+				font-size: functions.std_val(font_size, $newWeightSizeCtg) !important;
+				line-height: functions.std_val(font_height, $newWeightSizeCtg) !important;
+				letter-spacing: functions.std_val(font_spacing, $newWeightSizeCtg) !important;
+				font-family: 'Inter', sans-serif !important;
+				font-weight: $weightIndex !important;
+			}
+		}
+	}
+}

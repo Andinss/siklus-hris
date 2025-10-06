@@ -1,0 +1,25 @@
+{
+  "public/assets/plugins/images/tooltip/shape1.svg": {
+    "file": "assets/shape1.svg",
+    "src": "public/assets/plugins/images/tooltip/shape1.svg"
+  },
+  "public/assets/plugins/images/tooltip/tooltip1.svg": {
+    "file": "assets/tooltip1.svg",
+    "src": "public/assets/plugins/images/tooltip/tooltip1.svg"
+  },
+  "public/assets/plugins/images/tooltip/tooltip2.svg": {
+    "file": "assets/tooltip2.svg",
+    "src": "public/assets/plugins/images/tooltip/tooltip2.svg"
+  },
+  "resources/js/app.js": {
+    "file": "assets/js/app.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/sass/style.scss": {
+    "file": "assets/css/style.css",
+    "src": "resources/sass/style.scss",
+    "isEntry": true
+  }
+}

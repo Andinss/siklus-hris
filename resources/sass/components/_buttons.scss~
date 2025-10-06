@@ -1,0 +1,246 @@
+// -----------------------------------------------------------------------------
+// This file contains buttons ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+// $variable = (states, background, background-hover, border-color, text-color, text-color-outline, shadow)
+
+$defaultButtons: (
+	'default',
+	functions.std_val(std_color, light_75),
+	functions.std_val(std_color, light_100),
+	material(blue_grey, 100),
+	functions.std_val(std_color, dark_100),
+	functions.std_val(std_color, light_75),
+	material_shadow(blue_grey, xs, 40)
+);
+
+$primaryButtons: (
+	'primary',
+	functions.std_val(std_color, primary_darker),
+	functions.std_val(std_color, primary_75),
+	functions.std_val(std_color, primary_darker),
+	functions.std_val(std_color, light_25),
+	functions.std_val(std_color, primary_darker),
+	material_shadow(blue_grey, xs, 40)
+);
+
+$secondaryButtons: (
+	'secondary',
+	functions.std_val(std_color, secondary_100),
+	functions.std_val(std_color, secondary_75),
+	functions.std_val(std_color, secondary_100),
+	functions.std_val(std_color, dark_100),
+	functions.std_val(std_color, secondary_200),
+	material_shadow(blue_grey, xs, 40)
+);
+
+$successButtons: (
+	'success',
+	functions.std_val(std_color, secondary_100),
+	functions.std_val(std_color, secondary_75),
+	functions.std_val(std_color, secondary_100),
+	functions.std_val(std_color, dark_100),
+	functions.std_val(std_color, secondary_200),
+	material_shadow(blue_grey, xs, 40)
+);
+
+$warningButtons: (
+	'warning',
+	functions.std_val(std_color, warning_100),
+	functions.std_val(std_color, warning_75),
+	functions.std_val(std_color, warning_100),
+	functions.std_val(std_color, dark_100),
+	functions.std_val(std_color, danger_100),
+	material_shadow(blue_grey, xs, 40)
+);
+
+$dangerButtons: (
+	'danger',
+	functions.std_val(std_color, danger_100),
+	functions.std_val(std_color, danger_75),
+	functions.std_val(std_color, danger_100),
+	functions.std_val(std_color, light_25),
+	functions.std_val(std_color, danger_100),
+	material_shadow(blue_grey, xs, 40)
+);
+
+$infoButtons: (
+	'info',
+	functions.std_val(std_color, info_100),
+	functions.std_val(std_color, info_75),
+	functions.std_val(std_color, info_100),
+	functions.std_val(std_color, light_25),
+	functions.std_val(std_color, info_100),
+	material_shadow(blue_grey, xs, 40)
+);
+
+$blueButtons: (
+	'blue',
+	functions.std_val(std_color, blue_100),
+	functions.std_val(std_color, blue_75),
+	functions.std_val(std_color, blue_100),
+	functions.std_val(std_color, light_25),
+	functions.std_val(std_color, blue_100),
+	material_shadow(blue_grey, xs, 40)
+);
+
+$disabledButtons: (
+	'disabled',
+	functions.std_val(std_color, grey_25),
+	functions.std_val(std_color, grey_25),
+	functions.std_val(std_color, grey_25),
+	functions.std_val(std_color, grey_50),
+	functions.std_val(std_color, grey_50),
+	material_shadow(blue_grey, xs, 40)
+);
+
+$darkButtons: (
+	'dark',
+	functions.std_val(std_color, dark_75),
+	functions.std_val(std_color, dark_50),
+	functions.std_val(std_color, dark_50),
+	functions.std_val(std_color, light_25),
+	functions.std_val(std_color, dark_50),
+	material_shadow(blue_grey, xs, 40)
+);
+
+$lightButtons: (
+	'light',
+	functions.std_val(std_color, light_50),
+	functions.std_val(std_color, light_75),
+	functions.std_val(std_color, light_50),
+	functions.std_val(std_color, light_25),
+	functions.std_val(std_color, light_25),
+	material_shadow(blue_grey, xs, 40)
+);
+
+$sidebarButtons: (
+	'sidebar',
+	functions.std_val(std_color, light_25),
+	functions.std_val(std_color, light_25),
+	functions.std_val(std_color, light_25),
+	functions.std_val(std_color, dark_25),
+	functions.std_val(std_color, dark_25),
+	material_shadow(blue_grey, xs, 40)
+);
+
+$whatsappButtons: (
+	'whatsapp',
+	functions.std_val(std_color, whatsapp_main),
+	functions.std_val(std_color, whatsapp_dark),
+	functions.std_val(std_color, whatsapp_main),
+	functions.std_val(std_color, light_25),
+	functions.std_val(std_color, light_25),
+	material_shadow(blue_grey, xs, 40)
+);
+
+$buttonsColorGroup: $defaultButtons, $primaryButtons, $secondaryButtons, $successButtons, $dangerButtons, $warningButtons, $infoButtons, $blueButtons, $disabledButtons, $darkButtons, $lightButtons, $sidebarButtons, $whatsappButtons;
+
+@each $states, $background, $backgroundHover, $borderColor, $textColor, $textColorOutline, $shadow in $buttonsColorGroup {
+	.btn {
+		&.btn-#{$states} {
+			background: $background !important;
+			border-color: $borderColor;
+			color: $textColor !important;
+			box-shadow: $shadow;
+			&:hover {
+				background: $backgroundHover !important;
+				border-color: $borderColor;
+				color: $textColor !important;
+			}
+			&:active {
+				box-shadow: 0px 0px 4px 1px inset rgba(96, 125, 139, 0.38) !important;
+				background: $backgroundHover !important;
+				border-color: $borderColor;
+				color: $textColor !important;
+			}
+		}
+		&.btn-outline-#{$states} {
+			border-color: $background !important;
+			color: $textColorOutline !important;
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: transparent;
+				border-color: $backgroundHover !important;
+				color: $backgroundHover !important;
+			}
+			@if ($states == 'default') {
+				border-color: material(blue_grey, 200) !important;
+				color: material(blue_grey, 200) !important;
+				&:hover,
+				&:focus,
+				&:active {
+					background-color: transparent;
+					border-color: material(blue_grey, 400) !important;
+					color: material(blue_grey, 400) !important;
+				}
+			}
+		}
+	}
+	.btn-group {
+		&.btn-group-toggle {
+			> .btn {
+				&.btn-#{$states} {
+					background: $background !important;
+					border-color: $borderColor;
+					color: $textColor;
+					box-shadow: $shadow;
+					&:hover {
+						background: $backgroundHover !important;
+						border-color: $borderColor;
+						color: $textColor;
+					}
+					&:active,
+					&.active {
+						box-shadow: 0px 0px 4px 1px inset rgba(96, 125, 139, 0.38) !important;
+						background: $backgroundHover !important;
+						border-color: $borderColor;
+						color: $textColor;
+					}
+				}
+				&.btn-outline-#{$states} {
+					border-color: $background !important;
+					color: $textColorOutline !important;
+					&:hover,
+					&:focus,
+					&:active,
+					&.active {
+						border-color: $backgroundHover !important;
+						color: $textColorOutline !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+.btn {
+	line-height: 1;
+	border: {
+		width: 1.5px;
+		radius: 4px;
+	}
+	@include mixins.flex-center;
+	padding: 8px 8px;
+	@include fonts.use_font(body_regular_sm);
+	> i {
+		margin-right: 5px;
+	}
+	@include mixins.breakpoint_min(md) {
+		padding: 4px 4px;
+	}
+	&-sm {
+		@include fonts.use_font(body_regular_sm);
+	}
+	&-lg {
+		@include fonts.use_font(body_regular_lg);
+	}
+	&.disabled {
+		pointer-events: none;
+	}
+}

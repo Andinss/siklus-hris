@@ -1,0 +1,60 @@
+// -----------------------------------------------------------------------------
+// This file contains buttons ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.btn {
+	background-color: transparent;
+	@include fonts.use_font(body_medium_md);
+	transition: unset;
+	border-radius: 8px;
+}
+
+$btnSetup:
+	('default', functions.std_val(material_color, light_blue_500), functions.std_val(material_color, light_blue_400)),
+	('primary', functions.std_val(std_color, primary_dark), functions.std_val(std_color, primary_darker)),
+	('secondary', functions.std_val(std_color, secondary_dark), functions.std_val(std_color, secondary_darker)),
+	('success', functions.std_val(material_color, teal_500), functions.std_val(material_color, teal_400)),
+	('warning', functions.std_val(material_color, orange_500), functions.std_val(material_color, orange_400)),
+	('danger', functions.std_val(material_color, red_500), functions.std_val(material_color, red_400)),
+	('info', functions.std_val(material_color, blue_500), functions.std_val(material_color, blue_400)),
+	('dark', functions.std_val(std_color, dark_25), functions.std_val(std_color, dark_75)),
+	('light', functions.std_val(std_color, light_25), functions.std_val(std_color, light_75)),
+	('whatsapp', functions.std_val(std_color, whatsapp_main), functions.std_val(std_color, whatsapp_dark));
+
+@each $variant, $bgColor, $bgHoverColor in $btnSetup {
+	.btn-#{$variant} {
+		background-color: none;
+		background: $bgColor;
+		border-color: $bgColor;
+		&:hover,
+		&:active {
+			background: $bgHoverColor;
+			border-color: $bgHoverColor;
+		}
+		&.active {
+			background: $bgHoverColor !important;
+			color: functions.std_val(std_color, light_25) !important;
+			border-color: $bgHoverColor !important;
+		}
+	}
+	.btn-outline-#{$variant} {
+		color: $bgColor;
+		border-color: $bgColor;
+		background-color: none;
+		&:hover,
+		&:active {
+			color: $bgHoverColor !important;
+			border-color: $bgHoverColor !important;
+		}
+		&.active {
+			background-color: none !important;
+			background: $bgHoverColor !important;
+			color: functions.std_val(std_color, light_25) !important;
+			border-color: $bgHoverColor !important;
+		}
+	}
+}

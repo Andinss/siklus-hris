@@ -1,0 +1,107 @@
+// -----------------------------------------------------------------------------
+// This file contains base rules for sass
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use './fonts' as fonts;
+
+html,
+body {
+	position: relative;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	height: 100%;
+	min-height: 100%;
+	width: 100%;
+	margin: 0;
+	background: functions.std_val(std_color, base) !important;
+}
+
+html {
+	&.sr {
+		.load-hidden {
+			visibility: hidden;
+		}
+	}
+}
+
+.square-ratio {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		display: block;
+		padding-top: 100%;
+	}
+
+	.square-ratio-content {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.square-ratio-img {
+	width: 100%;
+	height: auto;
+	display: block;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+}
+
+/* Smooth Scrollbar Styles */
+.scroll-content {
+	overflow: visible !important;
+}
+
+.scrollbar-track {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+}
+
+hr {
+	margin: 1.25rem 0;
+}
+
+input[type='password'] {
+	&::-ms-reveal,
+	&::-ms-clear,
+	&::-webkit-contacts-auto-fill-button,
+	&::-webkit-credentials-auto-fill-button,
+	&::-webkit-textfield-decoration-container {
+		display: none !important;
+	}
+}
+
+/* To analyze */
+
+section {
+	position: relative;
+	width: 100%;
+	padding: 1.25rem 0;
+	@include mixins.breakpoint_min(lg) {
+		padding: 2.5rem 0;
+	}
+}
+
+#wrapper {
+	width: 100%;
+}
+
+.on-preloader {
+	position: fixed;
+	height: 100vh;
+	overflow: hidden;
+}

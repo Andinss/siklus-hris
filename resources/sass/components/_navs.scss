@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains navs ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+	background: #ff6849;
+	color: #fff;
+}
+.nav-pills > li > a {
+	color: #2b2b2b;
+	border-radius: 2px;
+}
+.nav-tabs > li > a {
+	border-radius: 2px;
+	color: #2b2b2b;
+}
+.nav-tabs > li > a:focus,
+.nav-tabs > li > a:hover {
+	background: #fff;
+}
+.nav-pills .nav-item.show .nav-link,
+.nav-pills .nav-link.active {
+	background: #ff6849;
+}

@@ -1,0 +1,48 @@
+{
+	"editor.tabSize": 2,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[blade]": {
+		"editor.defaultFormatter": "shufo.vscode-blade-formatter",
+		"editor.formatOnSave": true,
+		"blade.format.enable": true,
+		"blade.format.embedJavascript": true,
+		"blade.format.embeddedLanguages": {
+			"javascript": true,
+			"typescript": true,
+			"css": true,
+			"scss": true
+		}
+	},
+
+	"editor.formatOnSave": true,
+	"bladeFormatter.format.indentSize": 1,
+	"bladeFormatter.format.noMultipleEmptyLines": true,
+	"bladeFormatter.format.useTabs": true,
+	"bladeFormatter.format.indentInnerHtml": true,
+	"bladeFormatter.format.wrapAttributes": "preserve",
+	"css.lint.unknownAtRules": "ignore",
+	"bladeFormatter.format.noPhpSyntaxCheck": true,
+	"bladeFormatter.format.enable": true,
+	"bladeFormatter.format.skipPhp": true,
+
+	"editor.codeActionsOnSave": {
+		"source.fixAll.stylelint": "explicit"
+	}
+}

@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains animation shadow rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.shadow {
+	box-shadow: functions.std_val(std_color, shadow) !important;
+	&-lg {
+		box-shadow: functions.std_val(std_color, shadow_lg) !important;
+	}
+	&-sm {
+		box-shadow: functions.std_val(std_color, shadow_sm) !important;
+	}
+}

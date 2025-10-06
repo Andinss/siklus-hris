@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains modal ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.modal-backdrop.in {
+	opacity: 0.5;
+}
+.modal-header {
+	display: block;
+}
+.modal-header .modal-title {
+	margin-top: 0;
+}

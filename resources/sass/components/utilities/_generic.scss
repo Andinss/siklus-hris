@@ -1,0 +1,108 @@
+// -----------------------------------------------------------------------------
+// This file contains generic component rules
+// -----------------------------------------------------------------------------
+
+@use '../../abstracts/mixins' as mixins;
+@use '../../abstracts/functions' as functions;
+@use '../../base/fonts' as fonts;
+
+.vt {
+	vertical-align: top;
+}
+.vb {
+	vertical-align: bottom;
+}
+.pull-in {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.b-0 {
+	border: none !important;
+}
+.vertical-middle {
+	vertical-align: middle;
+}
+.mx-box {
+	max-height: 380px;
+	min-height: 380px;
+}
+.thumb-sm {
+	height: 32px;
+	width: 32px;
+}
+.thumb-md {
+	height: 48px;
+	width: 48px;
+}
+.thumb-lg {
+	height: 88px;
+	width: 88px;
+}
+
+// .preloader {
+// 	width: 100%;
+// 	height: 100%;
+// 	top: 0;
+// 	position: fixed;
+// 	z-index: 99999;
+// 	background: #fff;
+// }
+.preloader .cssload-speeding-wheel {
+	position: absolute;
+	top: calc(50% - 3.5px);
+	left: calc(50% - 3.5px);
+}
+.dn {
+	display: none;
+}
+.db {
+	display: block;
+}
+.white-box {
+	background: functions.std_val(std_color, light_25);
+	padding: 8px 12px;
+	margin-bottom: 4px;
+	border-radius: 8px;
+}
+.white-box .box-title {
+	margin: 0 0 12px;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+// BG Title
+.bg-title {
+	background: functions.std_val(std_color, light_100);
+	overflow: hidden;
+	padding: 2px 4px;
+	margin-bottom: 8px;
+	margin-left: -25.5px;
+	margin-right: -25.5px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.bg-title h4 {
+	color: functions.std_val(std_color, dark_25);
+	font-weight: 600;
+	margin: 0;
+}
+.bg-title .breadcrumb {
+	background: 0 0;
+	margin-bottom: 0;
+	float: right;
+	padding: 0;
+}
+.bg-title .breadcrumb a {
+	color: rgba(0, 0, 0, 0.5);
+}
+.bg-title .breadcrumb a:hover {
+	color: #000;
+}
+.bg-title .breadcrumb .active {
+	color: functions.std_val(std_color, primary_darker);
+}
+
+.bx-shadow {
+	-moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}

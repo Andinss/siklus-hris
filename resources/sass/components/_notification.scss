@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains notification ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.notify {
+	position: absolute;
+	top: 12px;
+	right: 16px;
+	.point {
+		position: absolute;
+		background-color: functions.std_val(std_color, secondary_main);
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+	}
+	.heartbit {
+		position: absolute;
+		top: -8px;
+		right: -16px;
+		height: 24px;
+		width: 24px;
+		border: 4px solid functions.std_val(std_color, alpha_secondary_64);
+		border-radius: 50%;
+		animation: heartbit 1s ease-out infinite;
+	}
+}

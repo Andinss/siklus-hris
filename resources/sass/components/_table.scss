@@ -1,0 +1,117 @@
+// -----------------------------------------------------------------------------
+// This file contains table ui component rules
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/functions' as functions;
+@use '../base/fonts' as fonts;
+
+.table-responsive {
+	overflow-y: hidden;
+}
+.table-box {
+	display: table;
+	width: 100%;
+}
+.table {
+	margin-bottom: 10px;
+}
+.table-hover > tbody > tr:hover,
+.table-striped > tbody > tr:nth-of-type(odd),
+.table > tbody > tr.active > td,
+.table > tbody > tr.active > th,
+.table > tbody > tr > td.active,
+.table > tbody > tr > th.active,
+.table > tfoot > tr.active > td,
+.table > tfoot > tr.active > th,
+.table > tfoot > tr > td.active,
+.table > tfoot > tr > th.active,
+.table > thead > tr.active > td,
+.table > thead > tr.active > th,
+.table > thead > tr > td.active,
+.table > thead > tr > th.active {
+	background-color: #f7fafc !important;
+}
+.table-bordered,
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+	border-top: 1px solid #e4e7ea;
+}
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+	padding: 15px 8px;
+}
+.table-bordered > tbody > tr > td,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > td,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > thead > tr > th {
+	border: 1px solid #e4e7ea;
+}
+.table > thead > tr > th {
+	vertical-align: bottom;
+	border-bottom: 1px solid #e4e7ea;
+}
+tbody {
+	color: #797979;
+}
+th {
+	color: #666;
+	font-weight: 500;
+}
+.table-bordered {
+	border: 1px solid #e4e7ea;
+}
+table.focus-on tbody tr.focused td,
+table.focus-on tbody tr.focused th {
+	background-color: #ff6849;
+	color: #fff;
+}
+.table-rep-plugin .table-responsive {
+	border: none !important;
+}
+.table-rep-plugin tbody th {
+	font-size: 14px;
+	font-weight: 400;
+}
+.datepicker td,
+.datepicker th,
+.table-condensed td,
+.table-condensed th {
+	padding: 5px;
+}
+
+// Edittable
+.editable-input .form-control {
+	height: 30px;
+}
+.editable-table + input.error {
+	border: 1px solid #fb9678;
+	outline: 0;
+	outline-offset: 0;
+}
+#editable-datatable_wrapper + input:focus,
+.editable-table + input,
+.editable-table + input:focus {
+	border: 1px solid #03a9f3 !important;
+	outline: 0 !important;
+	outline-offset: 0 !important;
+}
+.editable-table td:focus {
+	outline: 0;
+}
+
+@include mixins.breakpoint_min(md) {
+	.table-responsive.pro-rd {
+		border: none;
+	}
+}

@@ -1,0 +1,234 @@
+// -----------------------------------------------------------------------------
+// This file contains palette class convertion
+// Color reference : https://material-ui.com/customization/color/
+// -----------------------------------------------------------------------------
+
+@use './functions' as functions;
+
+$colorBundle : 
+("red", 50, functions.std_val(material_color, red_50), functions.std_val(std_color, dark_75)),
+("red", 100, functions.std_val(material_color, red_100), functions.std_val(std_color, dark_75)),
+("red", 200, functions.std_val(material_color, red_200), functions.std_val(std_color, dark_75)),
+("red", 300, functions.std_val(material_color, red_300), functions.std_val(std_color, dark_75)),
+("red", 400, functions.std_val(material_color, red_400), functions.std_val(std_color, light_25)),
+("red", 500, functions.std_val(material_color, red_500), functions.std_val(std_color, light_25)),
+("red", 600, functions.std_val(material_color, red_600), functions.std_val(std_color, light_25)),
+("red", 700, functions.std_val(material_color, red_700), functions.std_val(std_color, light_25)),
+("red", 800, functions.std_val(material_color, red_800), functions.std_val(std_color, light_25)),
+("red", 900, functions.std_val(material_color, red_900), functions.std_val(std_color, light_25)),
+
+("pink", 50, functions.std_val(material_color, pink_50), functions.std_val(std_color, dark_75)),
+("pink", 100, functions.std_val(material_color, pink_100), functions.std_val(std_color, dark_75)),
+("pink", 200, functions.std_val(material_color, pink_200), functions.std_val(std_color, dark_75)),
+("pink", 300, functions.std_val(material_color, pink_300), functions.std_val(std_color, light_25)),
+("pink", 400, functions.std_val(material_color, pink_400), functions.std_val(std_color, light_25)),
+("pink", 500, functions.std_val(material_color, pink_500), functions.std_val(std_color, light_25)),
+("pink", 600, functions.std_val(material_color, pink_600), functions.std_val(std_color, light_25)),
+("pink", 700, functions.std_val(material_color, pink_700), functions.std_val(std_color, light_25)),
+("pink", 800, functions.std_val(material_color, pink_800), functions.std_val(std_color, light_25)),
+("pink", 900, functions.std_val(material_color, pink_900), functions.std_val(std_color, light_25)),
+
+("purple", 50, functions.std_val(material_color, purple_50), functions.std_val(std_color, dark_75)),
+("purple", 100, functions.std_val(material_color, purple_100), functions.std_val(std_color, dark_75)),
+("purple", 200, functions.std_val(material_color, purple_200), functions.std_val(std_color, dark_75)),
+("purple", 300, functions.std_val(material_color, purple_300), functions.std_val(std_color, light_25)),
+("purple", 400, functions.std_val(material_color, purple_400), functions.std_val(std_color, light_25)),
+("purple", 500, functions.std_val(material_color, purple_500), functions.std_val(std_color, light_25)),
+("purple", 600, functions.std_val(material_color, purple_600), functions.std_val(std_color, light_25)),
+("purple", 700, functions.std_val(material_color, purple_700), functions.std_val(std_color, light_25)),
+("purple", 800, functions.std_val(material_color, purple_800), functions.std_val(std_color, light_25)),
+("purple", 900, functions.std_val(material_color, purple_900), functions.std_val(std_color, light_25)),
+
+("deep_purple", 50, functions.std_val(material_color, deep_purple_50), functions.std_val(std_color, dark_75)),
+("deep_purple", 100, functions.std_val(material_color, deep_purple_100), functions.std_val(std_color, dark_75)),
+("deep_purple", 200, functions.std_val(material_color, deep_purple_200), functions.std_val(std_color, dark_75)),
+("deep_purple", 300, functions.std_val(material_color, deep_purple_300), functions.std_val(std_color, light_25)),
+("deep_purple", 400, functions.std_val(material_color, deep_purple_400), functions.std_val(std_color, light_25)),
+("deep_purple", 500, functions.std_val(material_color, deep_purple_500), functions.std_val(std_color, light_25)),
+("deep_purple", 600, functions.std_val(material_color, deep_purple_600), functions.std_val(std_color, light_25)),
+("deep_purple", 700, functions.std_val(material_color, deep_purple_700), functions.std_val(std_color, light_25)),
+("deep_purple", 800, functions.std_val(material_color, deep_purple_800), functions.std_val(std_color, light_25)),
+("deep_purple", 900, functions.std_val(material_color, deep_purple_900), functions.std_val(std_color, light_25)),
+
+("indigo", 50, functions.std_val(material_color, indigo_50), functions.std_val(std_color, dark_75)),
+("indigo", 100, functions.std_val(material_color, indigo_100), functions.std_val(std_color, dark_75)),
+("indigo", 200, functions.std_val(material_color, indigo_200), functions.std_val(std_color, dark_75)),
+("indigo", 300, functions.std_val(material_color, indigo_300), functions.std_val(std_color, light_25)),
+("indigo", 400, functions.std_val(material_color, indigo_400), functions.std_val(std_color, light_25)),
+("indigo", 500, functions.std_val(material_color, indigo_500), functions.std_val(std_color, light_25)),
+("indigo", 600, functions.std_val(material_color, indigo_600), functions.std_val(std_color, light_25)),
+("indigo", 700, functions.std_val(material_color, indigo_700), functions.std_val(std_color, light_25)),
+("indigo", 800, functions.std_val(material_color, indigo_800), functions.std_val(std_color, light_25)),
+("indigo", 900, functions.std_val(material_color, indigo_900), functions.std_val(std_color, light_25)),
+
+("blue", 50, functions.std_val(material_color, blue_50), functions.std_val(std_color, dark_75)),
+("blue", 100, functions.std_val(material_color, blue_100), functions.std_val(std_color, dark_75)),
+("blue", 200, functions.std_val(material_color, blue_200), functions.std_val(std_color, dark_75)),
+("blue", 300, functions.std_val(material_color, blue_300), functions.std_val(std_color, dark_75)),
+("blue", 400, functions.std_val(material_color, blue_400), functions.std_val(std_color, dark_75)),
+("blue", 500, functions.std_val(material_color, blue_500), functions.std_val(std_color, light_25)),
+("blue", 600, functions.std_val(material_color, blue_600), functions.std_val(std_color, light_25)),
+("blue", 700, functions.std_val(material_color, blue_700), functions.std_val(std_color, light_25)),
+("blue", 800, functions.std_val(material_color, blue_800), functions.std_val(std_color, light_25)),
+("blue", 900, functions.std_val(material_color, blue_900), functions.std_val(std_color, light_25)),
+
+("light_blue", 50, functions.std_val(material_color, light_blue_50), functions.std_val(std_color, dark_75)),
+("light_blue", 100, functions.std_val(material_color, light_blue_100), functions.std_val(std_color, dark_75)),
+("light_blue", 200, functions.std_val(material_color, light_blue_200), functions.std_val(std_color, dark_75)),
+("light_blue", 300, functions.std_val(material_color, light_blue_300), functions.std_val(std_color, dark_75)),
+("light_blue", 400, functions.std_val(material_color, light_blue_400), functions.std_val(std_color, dark_75)),
+("light_blue", 500, functions.std_val(material_color, light_blue_500), functions.std_val(std_color, dark_75)),
+("light_blue", 600, functions.std_val(material_color, light_blue_600), functions.std_val(std_color, light_25)),
+("light_blue", 700, functions.std_val(material_color, light_blue_700), functions.std_val(std_color, light_25)),
+("light_blue", 800, functions.std_val(material_color, light_blue_800), functions.std_val(std_color, light_25)),
+("light_blue", 900, functions.std_val(material_color, light_blue_900), functions.std_val(std_color, light_25)),
+
+("cyan", 50, functions.std_val(material_color, cyan_50), functions.std_val(std_color, dark_75)),
+("cyan", 100, functions.std_val(material_color, cyan_100), functions.std_val(std_color, dark_75)),
+("cyan", 200, functions.std_val(material_color, cyan_200), functions.std_val(std_color, dark_75)),
+("cyan", 300, functions.std_val(material_color, cyan_300), functions.std_val(std_color, dark_75)),
+("cyan", 400, functions.std_val(material_color, cyan_400), functions.std_val(std_color, dark_75)),
+("cyan", 500, functions.std_val(material_color, cyan_500), functions.std_val(std_color, dark_75)),
+("cyan", 600, functions.std_val(material_color, cyan_600), functions.std_val(std_color, dark_75)),
+("cyan", 700, functions.std_val(material_color, cyan_700), functions.std_val(std_color, light_25)),
+("cyan", 800, functions.std_val(material_color, cyan_800), functions.std_val(std_color, light_25)),
+("cyan", 900, functions.std_val(material_color, cyan_900), functions.std_val(std_color, light_25)),
+
+("teal", 50, functions.std_val(material_color, teal_50), functions.std_val(std_color, dark_75)),
+("teal", 100, functions.std_val(material_color, teal_100), functions.std_val(std_color, dark_75)),
+("teal", 200, functions.std_val(material_color, teal_200), functions.std_val(std_color, dark_75)),
+("teal", 300, functions.std_val(material_color, teal_300), functions.std_val(std_color, dark_75)),
+("teal", 400, functions.std_val(material_color, teal_400), functions.std_val(std_color, light_25)),
+("teal", 500, functions.std_val(material_color, teal_500), functions.std_val(std_color, light_25)),
+("teal", 600, functions.std_val(material_color, teal_600), functions.std_val(std_color, light_25)),
+("teal", 700, functions.std_val(material_color, teal_700), functions.std_val(std_color, light_25)),
+("teal", 800, functions.std_val(material_color, teal_800), functions.std_val(std_color, light_25)),
+("teal", 900, functions.std_val(material_color, teal_900), functions.std_val(std_color, light_25)),
+
+("green", 50, functions.std_val(material_color, green_50), functions.std_val(std_color, dark_75)),
+("green", 100, functions.std_val(material_color, green_100), functions.std_val(std_color, dark_75)),
+("green", 200, functions.std_val(material_color, green_200), functions.std_val(std_color, dark_75)),
+("green", 300, functions.std_val(material_color, green_300), functions.std_val(std_color, dark_75)),
+("green", 400, functions.std_val(material_color, green_400), functions.std_val(std_color, dark_75)),
+("green", 500, functions.std_val(material_color, green_500), functions.std_val(std_color, dark_75)),
+("green", 600, functions.std_val(material_color, green_600), functions.std_val(std_color, light_25)),
+("green", 700, functions.std_val(material_color, green_700), functions.std_val(std_color, light_25)),
+("green", 800, functions.std_val(material_color, green_800), functions.std_val(std_color, light_25)),
+("green", 900, functions.std_val(material_color, green_900), functions.std_val(std_color, light_25)),
+
+("light_green", 50, functions.std_val(material_color, light_green_50), functions.std_val(std_color, dark_75)),
+("light_green", 100, functions.std_val(material_color, light_green_100), functions.std_val(std_color, dark_75)),
+("light_green", 200, functions.std_val(material_color, light_green_200), functions.std_val(std_color, dark_75)),
+("light_green", 300, functions.std_val(material_color, light_green_300), functions.std_val(std_color, dark_75)),
+("light_green", 400, functions.std_val(material_color, light_green_400), functions.std_val(std_color, dark_75)),
+("light_green", 500, functions.std_val(material_color, light_green_500), functions.std_val(std_color, dark_75)),
+("light_green", 600, functions.std_val(material_color, light_green_600), functions.std_val(std_color, dark_75)),
+("light_green", 700, functions.std_val(material_color, light_green_700), functions.std_val(std_color, light_25)),
+("light_green", 800, functions.std_val(material_color, light_green_800), functions.std_val(std_color, light_25)),
+("light_green", 900, functions.std_val(material_color, light_green_900), functions.std_val(std_color, light_25)),
+
+("lime", 50, functions.std_val(material_color, lime_50), functions.std_val(std_color, dark_75)),
+("lime", 100, functions.std_val(material_color, lime_100), functions.std_val(std_color, dark_75)),
+("lime", 200, functions.std_val(material_color, lime_200), functions.std_val(std_color, dark_75)),
+("lime", 300, functions.std_val(material_color, lime_300), functions.std_val(std_color, dark_75)),
+("lime", 400, functions.std_val(material_color, lime_400), functions.std_val(std_color, dark_75)),
+("lime", 500, functions.std_val(material_color, lime_500), functions.std_val(std_color, dark_75)),
+("lime", 600, functions.std_val(material_color, lime_600), functions.std_val(std_color, dark_75)),
+("lime", 700, functions.std_val(material_color, lime_700), functions.std_val(std_color, dark_75)),
+("lime", 800, functions.std_val(material_color, lime_800), functions.std_val(std_color, dark_75)),
+("lime", 900, functions.std_val(material_color, lime_900), functions.std_val(std_color, light_25)),
+
+("yellow", 50, functions.std_val(material_color, yellow_50), functions.std_val(std_color, dark_75)),
+("yellow", 100, functions.std_val(material_color, yellow_100), functions.std_val(std_color, dark_75)),
+("yellow", 200, functions.std_val(material_color, yellow_200), functions.std_val(std_color, dark_75)),
+("yellow", 300, functions.std_val(material_color, yellow_300), functions.std_val(std_color, dark_75)),
+("yellow", 400, functions.std_val(material_color, yellow_400), functions.std_val(std_color, dark_75)),
+("yellow", 500, functions.std_val(material_color, yellow_500), functions.std_val(std_color, dark_75)),
+("yellow", 600, functions.std_val(material_color, yellow_600), functions.std_val(std_color, dark_75)),
+("yellow", 700, functions.std_val(material_color, yellow_700), functions.std_val(std_color, dark_75)),
+("yellow", 800, functions.std_val(material_color, yellow_800), functions.std_val(std_color, dark_75)),
+("yellow", 900, functions.std_val(material_color, yellow_900), functions.std_val(std_color, dark_75)),
+
+("amber", 50, functions.std_val(material_color, amber_50), functions.std_val(std_color, dark_75)),
+("amber", 100, functions.std_val(material_color, amber_100), functions.std_val(std_color, dark_75)),
+("amber", 200, functions.std_val(material_color, amber_200), functions.std_val(std_color, dark_75)),
+("amber", 300, functions.std_val(material_color, amber_300), functions.std_val(std_color, dark_75)),
+("amber", 400, functions.std_val(material_color, amber_400), functions.std_val(std_color, dark_75)),
+("amber", 500, functions.std_val(material_color, amber_500), functions.std_val(std_color, dark_75)),
+("amber", 600, functions.std_val(material_color, amber_600), functions.std_val(std_color, dark_75)),
+("amber", 700, functions.std_val(material_color, amber_700), functions.std_val(std_color, dark_75)),
+("amber", 800, functions.std_val(material_color, amber_800), functions.std_val(std_color, dark_75)),
+("amber", 900, functions.std_val(material_color, amber_900), functions.std_val(std_color, dark_75)),
+
+("orange", 50, functions.std_val(material_color, orange_50), functions.std_val(std_color, dark_75)),
+("orange", 100, functions.std_val(material_color, orange_100), functions.std_val(std_color, dark_75)),
+("orange", 200, functions.std_val(material_color, orange_200), functions.std_val(std_color, dark_75)),
+("orange", 300, functions.std_val(material_color, orange_300), functions.std_val(std_color, dark_75)),
+("orange", 400, functions.std_val(material_color, orange_400), functions.std_val(std_color, dark_75)),
+("orange", 500, functions.std_val(material_color, orange_500), functions.std_val(std_color, dark_75)),
+("orange", 600, functions.std_val(material_color, orange_600), functions.std_val(std_color, dark_75)),
+("orange", 700, functions.std_val(material_color, orange_700), functions.std_val(std_color, dark_75)),
+("orange", 800, functions.std_val(material_color, orange_800), functions.std_val(std_color, light_25)),
+("orange", 900, functions.std_val(material_color, orange_900), functions.std_val(std_color, light_25)),
+
+("deep_orange", 50, functions.std_val(material_color, deep_orange_50), functions.std_val(std_color, dark_75)),
+("deep_orange", 100, functions.std_val(material_color, deep_orange_100), functions.std_val(std_color, dark_75)),
+("deep_orange", 200, functions.std_val(material_color, deep_orange_200), functions.std_val(std_color, dark_75)),
+("deep_orange", 300, functions.std_val(material_color, deep_orange_300), functions.std_val(std_color, dark_75)),
+("deep_orange", 400, functions.std_val(material_color, deep_orange_400), functions.std_val(std_color, dark_75)),
+("deep_orange", 500, functions.std_val(material_color, deep_orange_500), functions.std_val(std_color, light_25)),
+("deep_orange", 600, functions.std_val(material_color, deep_orange_600), functions.std_val(std_color, light_25)),
+("deep_orange", 700, functions.std_val(material_color, deep_orange_700), functions.std_val(std_color, light_25)),
+("deep_orange", 800, functions.std_val(material_color, deep_orange_800), functions.std_val(std_color, light_25)),
+("deep_orange", 900, functions.std_val(material_color, deep_orange_900), functions.std_val(std_color, light_25)),
+
+("brown", 50, functions.std_val(material_color, brown_50), functions.std_val(std_color, dark_75)),
+("brown", 100, functions.std_val(material_color, brown_100), functions.std_val(std_color, dark_75)),
+("brown", 200, functions.std_val(material_color, brown_200), functions.std_val(std_color, dark_75)),
+("brown", 300, functions.std_val(material_color, brown_300), functions.std_val(std_color, light_25)),
+("brown", 400, functions.std_val(material_color, brown_400), functions.std_val(std_color, light_25)),
+("brown", 500, functions.std_val(material_color, brown_500), functions.std_val(std_color, light_25)),
+("brown", 600, functions.std_val(material_color, brown_600), functions.std_val(std_color, light_25)),
+("brown", 700, functions.std_val(material_color, brown_700), functions.std_val(std_color, light_25)),
+("brown", 800, functions.std_val(material_color, brown_800), functions.std_val(std_color, light_25)),
+("brown", 900, functions.std_val(material_color, brown_900), functions.std_val(std_color, light_25)),
+
+("grey", 50, functions.std_val(material_color, grey_50), functions.std_val(std_color, dark_75)),
+("grey", 100, functions.std_val(material_color, grey_100), functions.std_val(std_color, dark_75)),
+("grey", 200, functions.std_val(material_color, grey_200), functions.std_val(std_color, dark_75)),
+("grey", 300, functions.std_val(material_color, grey_300), functions.std_val(std_color, dark_75)),
+("grey", 400, functions.std_val(material_color, grey_400), functions.std_val(std_color, dark_75)),
+("grey", 500, functions.std_val(material_color, grey_500), functions.std_val(std_color, dark_75)),
+("grey", 600, functions.std_val(material_color, grey_600), functions.std_val(std_color, light_25)),
+("grey", 700, functions.std_val(material_color, grey_700), functions.std_val(std_color, light_25)),
+("grey", 800, functions.std_val(material_color, grey_800), functions.std_val(std_color, light_25)),
+("grey", 900, functions.std_val(material_color, grey_900), functions.std_val(std_color, light_25)),
+
+("blue_grey", 100, functions.std_val(material_color, blue_grey_100), functions.std_val(std_color, dark_75)),
+("blue_grey", 200, functions.std_val(material_color, blue_grey_200), functions.std_val(std_color, dark_75)),
+("blue_grey", 300, functions.std_val(material_color, blue_grey_300), functions.std_val(std_color, dark_75)),
+("blue_grey", 400, functions.std_val(material_color, blue_grey_400), functions.std_val(std_color, light_25)),
+("blue_grey", 500, functions.std_val(material_color, blue_grey_500), functions.std_val(std_color, light_25)),
+("blue_grey", 600, functions.std_val(material_color, blue_grey_600), functions.std_val(std_color, light_25)),
+("blue_grey", 700, functions.std_val(material_color, blue_grey_700), functions.std_val(std_color, light_25)),
+("blue_grey", 800, functions.std_val(material_color, blue_grey_800), functions.std_val(std_color, light_25)),
+("blue_grey", 900, functions.std_val(material_color, blue_grey_900), functions.std_val(std_color, light_25));
+
+// This mixins to generate Text & Background color class name
+// Example of use : lc-txt-blue-600 / lc-bg-deep-purple-200
+@each $colorCode, $toneIndex, $bgColor, $textColor in $colorBundle{
+    $newColorClass: str-replace(unquote($colorCode), '_', '-');
+    
+    @if $newColorClass {
+        // lc = Local , txt = Text
+        .lc-txt-#{$newColorClass}-#{$toneIndex}{
+            color: $bgColor!important;
+        }
+
+        // lc = Local , bg = Background
+        .lc-bg-#{$newColorClass}-#{$toneIndex}{ 
+            color: $textColor!important;
+            background: $bgColor!important;
+        }
+    }
+}
